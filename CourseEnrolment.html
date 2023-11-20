@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment</title>
+    <link rel="stylesheet" type="text/css" href="Enrolmentstyle.css">
+	<link rel="stylesheet" href="head.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+     <!-- Link to external CSS stylesheet -->
+</head>
+<body>
+    <header>
+        <a class="logo">Code<span>Crusher</span></a>
+        <nav class="navigation">
+            <a href="index.html" accesskey="h">Home </a>
+            <a href="Course.html" accesskey="c">Course </a>
+            <a href="TutorsPage.html" accesskey="t">Tutors </a>
+            <a href="test.html" accesskey="a">Administrators </a>
+            <a href="example.html" accesskey="p">Parent </a>
+        </nav>
+    </header>
+   
+   <div class="breadcrumbs">
+    <a href="index.html">Home</a> &gt; &gt;
+    <a href="example.html">Parent Dashboard</a> &gt; &gt;
+	<a href="CourseEnrolment.html">Course Enrollment</a>
+	
+   </div>  
+
+    <main>
+   <section class="main">
+
+    <div>
+	   <!-- <img src="images/enrollment.jpg" alt="enrollment page">-->
+		<div class= "intro-container">
+        <h2 >Thank you for investing in your child's bright future through our programming courses.</h2>
+        <h3 >Your commitment to your child's education and future is greatly appreciated. Together, we'll empower your children with valuable skills and knowledge, opening doors to exciting opportunities. Thank you for entrusting us with your child's growth and development.</h3>
+        </div>
+
+    </div>
+
+   </section>
+		
+<!-- Filters -->
+
+<div class="filter-container">
+
+    <div class="filter-dropdown">
+        <label for="kids-filter">Filter by Kids:</label>
+        <select id="kids-filter" name="kids-filter">
+            <option value="all">All Kids</option>
+            <option value="kid1">Ahmad ali</option>
+            <option value="kid2">fahad ali</option>
+
+        </select>
+    </div>
+
+
+    <div class="filter-dropdown">
+        <label for="prerequisite-filter">Filter by Prerequisites:</label>
+        <select id="prerequisite-filter" name="prerequisite-filter">
+            <option value="all">All Prerequisites</option>
+            <option value="computer-skills">Computer Skills</option>
+            <option value="math-skills">Math Skills</option>
+			<option value="Reading-skills">Reading Skills</option>
+			<option value="Interest and Enthusiasm">Interest and Enthusiasm</option>
+			<option value="Age-Appropriate">8 - 14 years</option>
+			<option value="Age-Appropriate">7 - 12 years</option>
+			<option value="Age-Appropriate">10- 16 years</option>
+
+        </select>
+    </div>
+
+
+    <div class="filter-dropdown">
+        <label for="tutor-filter">Filter by Tutor:</label>
+        <select id="tutor-filter" name="tutor-filter">
+            <option value="all">All Tutors</option>
+            <option value="tutor1">Fahad Omar</option>
+            <option value="tutor2">Sami Ahmed</option>
+			<option value="tutor2">Hind Saleh</option>
+			<option value="tutor2">Amal Abdullah</option>
+			<option value="tutor2">Najwa Hamed</option>
+			<option value="tutor2">Mona Khalid</option>
+
+        </select>
+    </div>
+	
+	
+</div>
+
+<!-- Courses -->
+
+        <div class="course-list">
+            <ul>
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course1.png" alt="Course 1 Image">
+                        <p>Java </p>
+                        <input type="checkbox" name="courses" value="course1">
+                    </div>
+                </li>
+				
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course2.png" alt="Course 2">
+                        <p>Python </p>
+                        <input type="checkbox" name="courses" value="course2">
+                    </div>
+                </li>
+				
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course3.png" alt="Course 3">
+                        <p>Scratch </p>
+                        <input type="checkbox" name="courses" value="course3">
+                    </div>
+                </li>
+				
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course4.png" alt="Course 4">
+                        <p>HTML </p>
+                        <input type="checkbox" name="courses" value="course4">
+                    </div>
+                </li>
+				
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course5.png" alt="Course 5">
+                        <p>Machine Learning </p>
+                        <input type="checkbox" name="courses" value="course5">
+                    </div>
+                </li>
+				
+				
+                <li>
+                    <div class="course-item">
+                        <img src="images/Course6.png" alt="Course 6">
+                        <p>Robotics</p>
+                        <input type="checkbox" name="courses" value="course6">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <button type="submit" class="enroll-button">Enroll Now</button>
+    </main>
+
+     <footer class="footer-distributed">
+
+      <div class="footer-left">
+          <h3>Code<span>Crusher</span></h3>
+
+          <p class="footer-links">
+            <a href="index.html">Home</a>
+            |
+            <a href="Course.html">course</a>
+            |
+            <a href="TutorsPage.html">Tutors</a>
+            |
+            <a href="test.html">Administrators</a>
+            |
+            <a href="example.html">Parent</a>
+        </p>
+          <p class="footer-company-name">Copyright © 2023 <strong>CodeCrushr</strong> All rights reserved. privacy pollicy </p>
+      </div>
+
+      <div class="footer-center">
+          <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>Saudi Arabia</span>
+                  Riyadh</p>
+          </div>
+
+          <div>
+              <i class="fa fa-phone"></i>
+              <p>+01 01112345</p>
+          </div>
+          <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:codecrusher@gmail.com">CodeCrusher@gmail.com</a></p>
+          </div>
+      </div>
+      <div class="footer-right">
+         
+        <p class="footer-subscribe">
+           <span>Subscribe to our News</span> </p>
+           <form>
+              <input id="email" type="email" placeholder="Enter your email">
+              <button id="fbutton" type="submit">Join</button>
+            </form>
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+  </footer>
+</body>
+</html>

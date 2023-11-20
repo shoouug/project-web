@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <title>Course Evaluation</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="evaluationPage.css">
+    <link rel="stylesheet" href="head.css">
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <a  class="logo">Code<span>Crusher</span></a>
+        <nav class="navigation">
+          <a href="index.html">Home </a>
+        <a href="Course.html">Course </a>
+           <a href="TutorsPage.html">Tutors </a>
+           <a href="test.html">Administrators </a>
+           <a href="example.html">Parent </a>
+       </nav>
+
+   </header>
+
+   <div class="breadcrumbs">
+    <a href="index.html">Home</a> &gt; &gt;
+    <a href="example.html">Parent Dashboard</a> &gt; &gt;
+	<a href="evaluationPage.html">Course Evaluation</a>
+
+    
+	
+</div>  
+<br>    <br>    <br>
+<main>
+    <div class="border-container">
+    <div class="container">
+        <h1>Course evaluation</h1>
+        <form id="feedback-form">
+            <label for="course">Choose a course to evaluate</label>
+            <select id="course" name="course">
+                <option value="java">java</option>
+                <option value="Python">Python</option>
+                <option value="Scratch">Scratch</option>
+                <option value="Introduction to Html">Html</option>
+                <option value="Introduction to Machin Learning">Machin Learning</option>
+                <option value="Introduction to Robotics">Robotics</option>
+            </select>
+        
+            <div class="rating">
+                        <div class="star checked">★</div>
+                        <div class="star checked">★</div>
+                        <div class="star checked">★</div>
+                        <div class="star checked">★</div>
+                        <div class="star checked">★</div>
+            </div>
+<!--
+            <div class="stars">
+                <span class="fa fa-star checked "></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>    
+ 
+
+            <br>
+            
+            -->
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4"></textarea>
+            <br>
+
+            <button id="Ebutton" type="submit" class="evbutton">Submit</button>
+
+        </form>
+    </div>
+    </div>
+	</main>
+     <footer class="footer-distributed">
+
+      <div class="footer-left">
+          <h3>Code<span>Crusher</span></h3>
+
+          <p class="footer-links">
+            <a href="index.html">Home</a>
+            |
+            <a href="Course.html">course</a>
+            |
+            <a href="TutorsPage.html">Tutors</a>
+            |
+            <a href="test.html">Administrators</a>
+            |
+            <a href="example.html">Parent</a>
+        </p>
+          <p class="footer-company-name">Copyright © 2023 <strong>CodeCrushr</strong> All rights reserved. privacy pollicy </p>
+      </div>
+
+      <div class="footer-center">
+          <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>Saudi Arabia</span>
+                  Riyadh</p>
+          </div>
+
+          <div>
+              <i class="fa fa-phone"></i>
+              <p>+01 01112345</p>
+          </div>
+          <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:codecrusher@gmail.com">CodeCrusher@gmail.com</a></p>
+          </div>
+      </div>
+      <div class="footer-right">
+        <p class="footer-subscribe">
+            <span>Subscribe to our News</span></p>
+              <form>
+               <input id="email" type="email" placeholder="Enter your email">
+               <button id="fbutton" type="submit" >Join</button>
+           </form>
+          
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+body{
+    background-color: hsl(212, 42%, 15%);
+        
+        
+    }
+    
+    .title {
+        
+        width: 100%;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        background: url(Images/tback.png) no-repeat;
+        background-size: contain;
+        background-position: right bottom;
+        background-attachment: scroll;
+        justify-content: center;
+        background-color: #9d8484 ;
+
+    
+    }
+
+
+
+    .wrapper {
+
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(1, 0, 0, 0.5); 
+        overflow-x: auto; 
+        width: 80%;
+        margin:auto;
+        background:  rgb(56, 56, 85);
+        
+    }
+    .wrapper::-webkit-scrollbar{
+        background-color:gray;
+        border-radius: 10px;
+    
+    }
+    .wrapper::-webkit-Scrollbar-thumb{
+        background-color:white;
+        border-radius: 10px;
+    }
+    .intro-container {
+        width: 50%;
+        justify-content: center;
+        padding-left: 60px;
+        padding-right: 59px;
+        top: 0;
+    }
+    
+    .intro-container h2 {
+        font-weight: bold;
+        font-size: 1.5em;
+        text-align: center;
+        color: #21397b;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        margin-bottom: 30px; /* Add margin to the right */
+    }
+    
+    .intro-container h3 {
+        color: #000000;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .Tutors {
+        
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        padding: 30px 50px;
+        text-align: center;
+        margin-right: 60px; 
+        line-height : 20px;
+        width : 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 15%;
+        overflow: hidden;
+    }
+    
+    .content {
+        text-align: center;
+        position: relative;
+        
+    }
+    
+    .content h3 {
+        font-size: 1.4rem;
+        color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .content p {
+        color: rgba(0, 0, 0, 0.7);
+        letter-spacing: 1px;
+    }
+    
+    
+    
+    .tutorbox{
+        display: flex;
+        padding: 0;
+    }
+    
+    .star {
+        justify-content: center;
+        font-size: 24px;
+        color: #ccc; /* Initial star color */
+        cursor: pointer;
+        transition: color 0.3s; /* Add color transition on hover */
+    }
+    
+    .star:hover {
+        color: #FFD700; /* Change star color on hover to gold/yellow */
+    }
+    
+    .star.checked {
+        color: #FFD700; /* Set the color for selected stars */
+    }
+    
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        margin-left: 30px;
+        margin-right: 30px;
+    }

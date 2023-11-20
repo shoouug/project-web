@@ -1,0 +1,127 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100;1,500;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
+
+
+
+body{
+background-color: hsl(212, 42%, 15%);
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    justify-content:center;
+    align-items: center;
+}
+
+
+
+.wrapper {
+    display: flex;
+	overflow-x: auto; 
+    background-color: hsl(212, 42%, 15%);
+   max-width:30%;	
+   margin: auto;
+
+}
+
+
+
+.kid-profile {
+    border: 2px solid black;
+    padding: 30px;
+    min-width: 300px;
+    text-align: center;
+    margin: 140px 140px 0px 55px; /* Adjust the margin as needed to separate the profiles */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	justify-content:center;
+}
+
+.wrapper::-webkit-scrollbar{
+	background-color:gray;
+	border-radius: 10px;
+
+}
+.wrapper::-webkit-Scrollbar-thumb{
+	background-color:white;
+	border-radius: 10px;
+}
+
+.kid-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url('Images/boy.png');
+    background-size: cover;
+    margin: 0 auto 10px;
+}
+
+    /* Style for the kid's name input field */
+    .kid-name {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid black ;
+     
+      border-radius: 5px;
+    }
+    
+
+    /* Style for the registered courses box */
+    .registered-courses {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid black;
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    /* Flex container for the boxes */
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      background-color: #9d8484 ;
+	     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	     max-width:80%;
+	    margin:auto;
+     
+    }
+   
+    
+	
+	
+    /* Style for each box */
+    .box {
+      flex: 10%;
+      padding: 1px 1px 1px 1px;
+      text-align: center ;
+       margin:60px;
+     padding: 10px 10px 10px 10px;
+  background-color: white;
+  color : hsl(212, 42%, 15%);
+      border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: 2%;
+    margin-left: 2%;
+    }
+    
+    
+    .box a:hover{  
+      
+    color : hsl(212, 42%, 15%); ; 
+    font-weight: bold;
+
+    }
+    
+    .Ee-image{
+
+    width:100%;
+    height:90%;
+
+    }

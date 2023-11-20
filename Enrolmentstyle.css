@@ -1,0 +1,129 @@
+/* Style for header */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100;1,500;1,900&display=swap');
+
+
+
+
+
+
+
+.main {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: url(Images/enrollment.png) no-repeat;
+    background-size: contain;
+    background-position:  right bottom;
+    background-attachment: scroll;
+    justify-content: center;
+	  padding-top: 50px;
+}
+
+
+
+.intro-container {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    top: 0;
+    
+}
+
+.intro-container h2 {
+    font-weight: bold;
+	font-size: 1.5em;
+    text-align: center;
+    color: #21397b;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Add margin to the right */
+}
+
+.intro-container h3 {
+    color: #000000;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+
+/* Style for the filter container */
+.filter-container {
+    text-align: center;
+    margin: 20px 0;
+	
+}
+
+.filter-dropdown{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+
+
+
+/* Style for the course list */
+.course-list ul {
+	
+	margin:  30px auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center horizontally */
+	width: 60%; /* Adjust the maximum width as needed */
+    height: auto;
+
+}
+
+/* Style for individual course items */
+.course-item {
+    font-size: 1em;
+	font-weight: bold;
+	background-color: white;
+    border: 4px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px; 
+    height: 200px;
+	position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.course-item:hover {
+	transform: scale(1.05);
+	background-color : lightgrey;
+}
+
+/* Style for course images */
+.course-item img {
+    max-width: 70%; /* Make sure the images fit within the course item */
+	height : 50%
+}
+
+/* Style for the enroll button */
+.enroll-button {
+	font-size: 1.3em;
+	font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 30px;
+    background-color: #4d3fea;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
