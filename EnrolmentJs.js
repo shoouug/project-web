@@ -139,3 +139,49 @@ function populateForm(courses) {
 populateForm(filteredCoursesByTutor);
 // or
 populateForm(filteredCoursesByPrerequisite);
+
+
+//5,6,7
+
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("courseForm");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Validate form inputs
+        var selectedChild = form.elements["child"].value;
+        var selectedCourse = form.elements["course"].value;
+
+        if (!selectedChild || !selectedCourse) {
+            alert("Please select a child and a course.");
+            return;
+        }
+
+        // Assuming you have an element with the ID "output" to display the information
+        var outputElement = document.getElementById("output");
+
+        // Clear previous information
+        outputElement.innerHTML = "";
+
+        // Display new information
+        var childInfo = localStorage.getItem("childInfo");
+        if (childInfo) {
+            childInfo = JSON.parse(childInfo);
+            var childName = childInfo.name;
+            var selectedTutor = getTutorForCourse(selectedCourse);
+            
+            outputElement.innerHTML = `<p>Child Name: ${childName}</p>`;
+            outputElement.innerHTML += `<p>Selected Course: ${selectedCourse}</p>`;
+            outputElement.innerHTML += `<p>Tutor: ${selectedTutor}</p>`;
+        }
+
+        // Clear the form
+        form.reset();
+    });
+
+    // Function to get tutor for a specific course
+    function getTutorForCourse(courseName) {
+        var course = courses.find(course => course.name === courseName);
+        return course ? course.tutor : "Tutor not found";
+    }
+});
