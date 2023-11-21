@@ -14,9 +14,41 @@
 </head>
 <body>
 <script>
-  function myFunction() {
-  document.getElementById("usrform").submit();
-}
+
+function validateForm() {
+      var fname = document.getElementById("fname").value;
+      var lname = document.getElementById("lname").value;
+      var gender = document.querySelector('input[name="gender"]:checked');
+      var age = document.getElementById("age").value;
+      var email = document.getElementById("emaill").value;
+      var phone = document.getElementById("phone").value;
+
+      if (fname === "" || lname === "" || !gender || age === "" || email === "" || phone === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      if (!/^[a-zA-Z]+$/.test(fname) || !/^[a-zA-Z]+$/.test(lname)) {
+        alert("Name fields should start with letter.");
+        return false;
+      }
+
+      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+      }
+
+      var birthDate = new Date(age);
+      var currentDate = new Date();
+      var cutoffDate = new Date("2017-01-01");
+
+      if (birthDate > currentDate || birthDate > cutoffDate) {
+        alert("Date of Birth cannot be after 2017.");
+        return false;
+      }
+
+      document.getElementById("usrform").submit();
+    }
 
 </script>
 
