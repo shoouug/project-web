@@ -57,6 +57,7 @@ function validateForm() {
 }
 
 function displayChildInformation(childInfo) {
+    //a
     var newWindow = window.open('', '_blank');
 
     newWindow.document.write('<html><head></head><body style="margin: 20px; padding: 20px; box-sizing: border-box;">');
