@@ -5,52 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="head.css" >
+    <link rel="stylesheet" href="newKidStyle.css">
+    <script src="newKid.js"></script>
+
+
 
     
     <title>Register New Kid</title>
-  <link rel="stylesheet" href="newKidStyle.css">
 
 
 </head>
 <body>
-<script>
-
-function validateForm() {
-      var fname = document.getElementById("fname").value;
-      var lname = document.getElementById("lname").value;
-      var gender = document.querySelector('input[name="gender"]:checked');
-      var age = document.getElementById("age").value;
-      var email = document.getElementById("emaill").value;
-      var phone = document.getElementById("phone").value;
-
-      if (fname === "" || lname === "" || !gender || age === "" || email === "" || phone === "") {
-        alert("Please fill in all fields.");
-        return false;
-      }
-
-      if (!/^[a-zA-Z]+$/.test(fname) || !/^[a-zA-Z]+$/.test(lname)) {
-        alert("Name fields should start with letter.");
-        return false;
-      }
-
-      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
-        alert("Please enter a valid 10-digit phone number.");
-        return false;
-      }
-
-      var birthDate = new Date(age);
-      var currentDate = new Date();
-      var cutoffDate = new Date("2017-01-01");
-
-      if (birthDate > currentDate || birthDate > cutoffDate) {
-        alert("Date of Birth cannot be after 2017.");
-        return false;
-      }
-
-      document.getElementById("usrform").submit();
-    }
-
-</script>
+  
 
   <header>
     <a class="logo">Code<span>Crusher</span></a>
@@ -71,8 +37,9 @@ function validateForm() {
    </div> 
 <br><main>
   <div class="registration-frame">
-    <form action="#" method="POST" id="usrform">
+    <form action="#" method="POST" id="usrform" onsubmit="return validateForm()">
       <fieldset class="one">
+
               <legend>Kid Information</legend>
               <ul>
                   <li>
@@ -101,7 +68,7 @@ function validateForm() {
                   </li>
                   <li>
                       <label for="email">Email:</label>
-                      <input type="email" id="emaill" name="email" value="">
+                      <input type="email" id="email" name="email" value="">
                   </li>
                   <li>
                       <label for="phone">phone-number:</label>
@@ -109,7 +76,7 @@ function validateForm() {
                   </li>
                   <li>
                     <p>Message:</p>
-                    <textarea rows="4" cols="50" name="comment" form="usrform">
+                    <textarea rows="4" cols="48" name="comment" form="usrform" id="comment">
                   Type your message here please!</textarea><br>
                     
                   </li>
@@ -124,10 +91,8 @@ function validateForm() {
   </div>
 </main>
 
+<div id="childInfoDisplay"></div>
 
-
-
-  
    <footer class="footer-distributed">
 
       <div class="footer-left">
