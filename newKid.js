@@ -46,8 +46,10 @@ function validateForm() {
             phone: phone
         };
         localStorage.setItem("childInfo", JSON.stringify(childInfo));
-        console.log("Child information stored in local storage:", childInfo);
+        console.log("before console");
 
+        console.log("Child information stored in local storage:", childInfo);
+        console.log("after console");
         displayChildInformation(childInfo);
     }
 
