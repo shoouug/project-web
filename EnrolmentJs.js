@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM content loaded");
 
     // Retrieve child names from local storage
@@ -13,7 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
         option.textContent = childName;
         kidsFilterDropdown.appendChild(option);
     });
+});*/
+
+
+//1
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Retrieve child name from local storage
+    var childName = localStorage.getItem("childName");
+
+    // Populate the kids filter dropdown with the retrieved child name
+    var kidsFilterDropdown = document.getElementById("kids-filter");
+    if (childName) {
+        var option = document.createElement("option");
+        option.value = childName;
+        option.textContent = childName;
+        kidsFilterDropdown.appendChild(option);
+    } else {
+        console.error("Child name not found in local storage.");
+    }
+
+    // You can do further processing or UI updates with the retrieved child name here
 });
+
 
 
 //2,3,4
