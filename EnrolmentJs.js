@@ -1,5 +1,3 @@
-//1
-
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve child names from local storage
     var childNames = JSON.parse(localStorage.getItem("childNames")) || [];
@@ -13,8 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
         kidsFilterDropdown.appendChild(option);
     });
 
+    // Display the filter subject
+    var filterSubject = document.getElementById("filter-subject");
+    var defaultSubject = "Kids";
+    filterSubject.textContent = defaultSubject;
+
+    // Handle filter change event
+    kidsFilterDropdown.addEventListener("change", function () {
+        // Set the selected child's name as the filter subject
+        filterSubject.textContent = kidsFilterDropdown.value || defaultSubject;
+
+        // You can do further processing or UI updates based on the selected child's name here
+    });
+
     // You can do further processing or UI updates with the retrieved child names here
 });
+
 
 
 //2,3,4
