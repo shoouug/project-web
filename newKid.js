@@ -57,7 +57,7 @@ function validateForm() {
 }
 
 function displayChildInformation(childInfo) {
-    //a
+  
     var newWindow = window.open('', '_blank');
 
     newWindow.document.write('<html><head></head><body style="margin: 20px; padding: 20px; box-sizing: border-box;">');
@@ -73,7 +73,7 @@ function displayChildInformation(childInfo) {
   
     newWindow.document.write('<p>Name: ' + childInfo.name + '</p>');
     newWindow.document.write('<p>Gender: ' + childInfo.gender + '</p>');
-    newWindow.document.write('<p>Age: ' + childInfo.age + '</p>');
+    newWindow.document.write('<p>DOB: ' + childInfo.age + '</p>');
     newWindow.document.write('<p>Email: ' + childInfo.email + '</p>');
     newWindow.document.write('<p>Phone: ' + childInfo.phone + '</p>');
 
