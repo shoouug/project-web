@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="admin.css" >
 	<link rel="stylesheet" href="head.css" >
+	
+
+	
 
 </head>
 <body> 
@@ -30,8 +33,14 @@
 </div>
 
 <main>
+
+
+
     <br>
     <h1>Administrator</h1>
+   <p id="currentWeekDate"></p>
+
+
 <div class= "list-of-Crushers">
     <h2>Our Crushers</h2>
     <ul class = "our-Crushers">
@@ -271,9 +280,25 @@
         </li>
     </ul>
 	</div>
-	</main>
-	
 
+	</main>
+	<script>
+    function getFormattedWeekStartDate() {
+        var currentDate = new Date();
+        var currentDay = currentDate.getDay(); // 0 is Sunday, 1 is Monday, etc.
+        var daysUntilSunday = (currentDay === 0) ? 0 : 7 - currentDay;
+        var sundayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + daysUntilSunday);
+
+        // Format the date as "Sunday DD Month"
+        var options = { weekday: 'long', day: 'numeric', month: 'long' };
+        var formattedDate = sundayDate.toLocaleDateString('en-US', options);
+
+        return formattedDate;
+    }
+
+    // Update the content of the 'currentWeekDate' paragraph
+    document.getElementById('currentWeekDate').innerHTML = 'Date: ' + getFormattedWeekStartDate();
+</script>
 
    <footer class="footer-distributed">
 
