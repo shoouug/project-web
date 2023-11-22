@@ -1,20 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM content loaded");
-
-    // Retrieve child names from local storage
-    var childNames = JSON.parse(localStorage.getItem("childNames")) || [];
-    console.log("Retrieved child names from local storage:", childNames);
-
-    // Populate the kids filter dropdown with the retrieved child names
-    var kidsFilterDropdown = document.getElementById("kids-filter");
-    childNames.forEach(function (childName) {
-        var option = document.createElement("option");
-        option.value = childName;
-        option.textContent = childName;
-        kidsFilterDropdown.appendChild(option);
-    });
-});*/
-
 
 //1
 
