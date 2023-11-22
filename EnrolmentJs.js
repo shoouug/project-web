@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM content loaded");
+
     // Retrieve child names from local storage
     var childNames = JSON.parse(localStorage.getItem("childNames")) || [];
+    console.log("Retrieved child names from local storage:", childNames);
 
     // Populate the kids filter dropdown with the retrieved child names
     var kidsFilterDropdown = document.getElementById("kids-filter");
@@ -10,23 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         option.textContent = childName;
         kidsFilterDropdown.appendChild(option);
     });
-
-    // Display the filter subject
-    var filterSubject = document.getElementById("filter-subject");
-    var defaultSubject = "Kids";
-    filterSubject.textContent = defaultSubject;
-
-    // Handle filter change event
-    kidsFilterDropdown.addEventListener("change", function () {
-        // Set the selected child's name as the filter subject
-        filterSubject.textContent = kidsFilterDropdown.value || defaultSubject;
-
-        // You can do further processing or UI updates based on the selected child's name here
-    });
-
-    // You can do further processing or UI updates with the retrieved child names here
 });
-
 
 
 //2,3,4
