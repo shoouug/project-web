@@ -62,6 +62,7 @@ section {
     margin: 20px auto; /* Center vertically using margin-top and margin:auto */
     padding: 20px;
     background-color: slategray;
+    border-radius: 15px
 }
 
 
