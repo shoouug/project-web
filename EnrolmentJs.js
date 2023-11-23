@@ -364,6 +364,25 @@ document.getElementById("tutor-filter").addEventListener("change", filterCourses
 
     ];
 
+    var registeredKids = JSON.parse(localStorage.getItem("registeredKids")) || [];
+
+    // Populate the kids filter dropdown
+    var kidsFilterDropdown = document.getElementById("kids-filter");
+
+    // Add options to the dropdown
+    var defaultOption = document.createElement("option");
+    defaultOption.value = "Kids";
+    defaultOption.textContent = "Select a child";
+    kidsFilterDropdown.appendChild(defaultOption);
+
+    // Add all registered kids' names to the dropdown
+    registeredKids.forEach(function (kidName) {
+        var option = document.createElement("option");
+        option.value = kidName;
+        option.textContent = kidName;
+        kidsFilterDropdown.appendChild(option);
+    });
+
     // Populate the prerequisite filter dropdown
     var prerequisiteFilterDropdown = document.getElementById("prerequisite-filter");
     var prerequisiteOptions = new Set();
