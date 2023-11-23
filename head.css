@@ -12,7 +12,20 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --primary--color: #f2f2f2;
+    --secondry--color: black;
+}
 
+.dark-mode {
+    --primary--color: #f2f2f2;
+    --secondry--color: white;
+}
+
+body {
+    background-color: var(--primary--color) !important;
+    color: var(--secondry--color) !important;
+}
 
 header {
     background-color: #2d2a30;
