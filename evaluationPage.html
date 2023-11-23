@@ -2,13 +2,28 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Course Evaluation</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="evaluationPage.css">
     <link rel="stylesheet" href="head.css">
+    <script src="theme-switch.js" defer></script>
+    <script src="evaluation.js"></script>
+    <script>
+        function toggleStar(star) {
+    star.classList.toggle('checked');
+    var stars = document.querySelectorAll('.star');
+    var clickedIndex = Array.from(stars).indexOf(star);
 
-
+    for (var i = 0; i < stars.length; i++) {
+        if (i <= clickedIndex) {
+            stars[i].classList.add('checked');
+        } else {
+            stars[i].classList.remove('checked');
+        }
+    }
+}
+</script>
 </head>
 
 <body>
@@ -49,13 +64,15 @@
                 <option value="Introduction to Machin Learning">Machin Learning</option>
                 <option value="Introduction to Robotics">Robotics</option>
             </select>
-        
+            
+            <p>Rate the course </p>
             <div class="rating">
-                        <div class="star checked">★</div>
-                        <div class="star checked">★</div>
-                        <div class="star checked">★</div>
-                        <div class="star checked">★</div>
-                        <div class="star checked">★</div>
+                <span class="star" onclick="toggleStar(this)" >★</span> 
+                <span class="star" onclick="toggleStar(this)">★</span>
+                <span class="star" onclick="toggleStar(this)">★</span>
+                <span class="star" onclick="toggleStar(this)">★</span>
+                <span class="star" onclick="toggleStar(this)">★</span>
+                
             </div>
 <!--
             <div class="stars">

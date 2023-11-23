@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tutors</title>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="TutorsPage.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Tutors</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="TutorsPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="head.css">
+    <script src="theme-switch.js" defer></script>
+
 <link rel="stylesheet" href="head.css">
+<script src="tutor.js" ></script> 
+
 </head>
 
 <body>
@@ -41,6 +46,15 @@
 
 
         <div class="wrapper"> 
+            <div class="sorting-dropdown">
+                <label for="sort">Sort Turors:</label>
+                <select id="sort" onchange="sortTutors()">
+                    <option value="" disabled selected>Choose a sorting way :</option>
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
+                </select>
+            </div>
+             <br>
 <div class="tutorbox">
 <pre>    </pre>
 

@@ -7,30 +7,32 @@
   margin: 0;
 }
 body {
-  background-color: hsl(212, 42%, 15%);
-  color: black;
-
+    color: var(--secondry--color) !important;
 }
-#currentWeekDate
-
-{color: white;
-
+#currentWeekDate {
+    color: var(--secondry--color);
 }
 /*kkkkkk*/
 /*llllll*/
 
-main{
-    padding: 100px 100px;
-	align-content:Center;
-	width: 100%;
-    min-height: 100vh;
-    display: grid;
+h1, h2 {
+    color: var(--secondry--color) !important;
 }
 
-.list-of-Crushers h2 {font-size: 36px;
-    color: #fff;
+main {
+    padding: 100px 100px;
+    align-content: Center;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    color: var(--secondry--color);
+}
+
+.list-of-Crushers h2 {
+    font-size: 36px;
+    color: var(--secondry--color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	}
+}
 .list-of-Crushers {
   overflow-x: scroll; 
   white-space: nowrap; 
@@ -66,6 +68,7 @@ main{
 	box-sizing: border-box;
 	min-width: 200px;
 	text-align: center;
+    color: black !important;
 }
 
 
@@ -100,12 +103,11 @@ main{
   
 }
 
-.Courses-info h2 {
-    font-size: 36px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	
-}
+    .Courses-info h2 {
+        font-size: 36px;
+        color: var(--secondry--color);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
 .courses {
     gap: 25px; 
@@ -116,18 +118,17 @@ main{
 	
 }
 
-.courses li {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 10px 50px ;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-	margin-right: 10px;
-    text-align	: center;
-	line-height : 20px;
-	box-sizing: border-box;
-
-
-}
+    .courses li {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 10px 50px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        margin-right: 10px;
+        text-align: center;
+        line-height: 20px;
+        box-sizing: border-box;
+        color: black !important;
+    }
 
 
 .courses ul {
@@ -169,11 +170,11 @@ main{
   white-space: nowrap;
 }
 
-.Tutors-info h2 {
-    font-size: 36px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}
+    .Tutors-info h2 {
+        font-size: 36px;
+        color: var(--secondry--color);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
 
 .Tutors {
@@ -184,16 +185,16 @@ main{
 }
 
 
-.Tutors li {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-	padding: 10px 30px ;
-	text-align: center;
-    margin-right: 20px; 
-	line-height : 20px;
-
-}
+    .Tutors li {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px 30px;
+        text-align: center;
+        margin-right: 20px;
+        line-height: 20px;
+        color: black !important;
+    }
 .Tutors-info::-webkit-scrollbar{
 	background-color:gray;
 	border-radius: 10px;
@@ -233,10 +234,11 @@ h1 {
 
 
 
-.list-of-Crushers , .Courses-info , .Tutors-info {
-	border-style : solid;
-	border-radius: 30px;
-	background-color: #9d8484;;
-	}
+.list-of-Crushers, .Courses-info, .Tutors-info {
+    border-style: solid;
+    border-radius: 30px;
+    background-color: slategray;
+    color: var(--secondry--color);
+}
 
 

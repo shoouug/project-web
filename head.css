@@ -12,6 +12,38 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --primary--color: #f2f2f2;
+    --secondry--color: black;
+}
+
+.dark-mode {
+    --primary--color: #221d45;
+    --secondry--color: white;
+}
+
+body {
+    background-color: var(--primary--color) !important;
+    color: var(--secondry--color) !important;
+}
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+
+
+#theme-toggle {
+    background: grey;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#mode-text {
+    margin-left: 8px;
+}
 
 
 header {

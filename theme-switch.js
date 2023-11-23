@@ -1,22 +1,28 @@
-// JavaScript source code
 document.addEventListener("DOMContentLoaded", function () {
     const themeToggle = document.getElementById("theme-toggle");
+    const modeText = document.getElementById("mode-text");
+    const body = document.body;
 
-    // Check the user's theme preference from local storage
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
-        themeToggle.checked = currentTheme === "theme-dark";
+    // Check if dark mode is stored in localStorage
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+    // Apply dark mode if previously set
+    if (isDarkMode) {
+        body.classList.add("dark-mode");
+        modeText.textContent = "Dark Mode";
     }
 
-    // Toggle the theme when the switch is changed
-    themeToggle.addEventListener("change", function () {
-        if (themeToggle.checked) {
-            document.body.classList.add("theme-dark");
-            localStorage.setItem("theme", "theme-dark");
-        } else {
-            document.body.classList.remove("theme-dark");
-            localStorage.setItem("theme", "theme-light");
-        }
-    });
+    themeToggle.addEventListener("click", toggleDarkMode);
+
+    function toggleDarkMode() {
+        // Toggle dark mode class on body
+        body.classList.toggle("dark-mode");
+
+        // Toggle mode text
+        const isDarkModeNow = body.classList.contains("dark-mode");
+        modeText.textContent = isDarkModeNow ? "Light Mode" : "Dark Mode";
+
+        // Store the current mode in localStorage
+        localStorage.setItem("darkMode", isDarkModeNow);
+    }
 });

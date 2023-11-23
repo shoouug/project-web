@@ -37,7 +37,7 @@ section {
         }
 
     .main h3 {
-        color: #000000;
+        color: var(--secondry--color) !important;
         font-size: 1.4em;
         font-weight: 700;
         letter-spacing: 1px;
@@ -181,14 +181,14 @@ img {
 
 #course {
     margin-top: 5px;
-    color: #62697b;
+    color: var(--secondry--color);
     font-size: 5em;
     font-weight: bold;
 }
 
 #review {
     margin-top: 5px;
-    color: #62697b;
+    color: var(--secondry--color);
     font-size: 5em;
     font-weight: bold;
 }
@@ -197,8 +197,8 @@ img {
 /* Updated CSS for better responsiveness */
 #vision {
     text-align: left;
-    margin-top: px;
-    color: #62697b;
+    margin-top: 5px;
+    color: var(--secondry--color);
     font-size: 5em;
     font-weight: bold;
 }
@@ -209,7 +209,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #9d8484;
+    background-color: slategrey;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     padding: 20px;
@@ -219,7 +219,6 @@ img {
     width: 25%;
     margin: 2%;
     border-radius: 15px;
-    background-color: #9d8484;
     text-align: center;
     justify-content: center;
     padding: 10px;
@@ -236,7 +235,7 @@ p {
     margin: 10px 10px;
     font-size: 16px;
     font-weight: bolder;
-    color: #fff;
+    color: var(--secondry--color);
 }
 
 /* Responsive Styles */
@@ -269,7 +268,7 @@ p {
 }
 
 .card__data {
-    background-color: hsl(212, 42%, 20%);
+    background-color: slategrey;
     text-align: center;
     position: relative;
     z-index: 10;
@@ -314,7 +313,7 @@ p {
     flex-direction: column;
     flex: 0 0 100%;
     scroll-snap-align: start;
-    background-color: hsl(211, 41%, 20%);
+    background-color: slategrey;
     height: 400px;
     border-radius: 1rem;
 }
@@ -415,7 +414,7 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #9d8484;
+    background-color: slategrey;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     position: relative;
@@ -462,6 +461,7 @@ p {
     width: 100%;
     overflow: hidden;
 }
+
 
 #slide1:checked ~ #slides .inner {
     margin-left: 0;
