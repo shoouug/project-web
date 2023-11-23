@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var userRating = document.querySelectorAll('.star.checked').length;
             displayAlert(selectedCourse, userRating);
         } else {
-            alert("Please provide a rating for the selected course before submitting");
+            alert("Please select a course and provide a rating before submitting");
         }
     });
 }); 
