@@ -23,6 +23,7 @@
     }
 }
 </script>
+<script src="theme-switch.js" defer></script>
 </head>
 
 <body>
@@ -55,7 +56,8 @@
         <h1>Course evaluation</h1>
         <form id="feedback-form">
             <label for="course">Choose a course to evaluate</label>
-            <select id="course" name="course">
+            <select id="course" name="course" onchange="updateRatingStars()" required>
+                <option value="" disabled selected>Choose a course</option>
                 <option value="java">java</option>
                 <option value="Python">Python</option>
                 <option value="Scratch">Scratch</option>
