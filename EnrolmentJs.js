@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     // Retrieve child name from local storage
-    var childName = localStorage.getItem("childName");
+    var childName = localStorge.getItem("childName");
 
     // Populate the kids filter dropdown with the retrieved child name
     var kidsFilterDropdown = document.getElementById("kids-filter");
