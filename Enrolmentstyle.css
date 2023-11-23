@@ -86,22 +86,181 @@
 }
 
 /* Style for individual course items */
-.course-item {
+/*java*/
+.course-item-Java {
     font-size: 1em;
     font-weight: bold;
     background-color: white;
-    border: 4px solid black;
+    border: 1px solid #655eb1;
     border-radius: 15px;
     margin: 10px;
     padding: 10px;
     text-align: center;
     width: 200px;
-    height: 200px;
+    height: 180px;
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     color: black !important;
 }
+
+
+/*Python*/
+.course-item-Python {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+/*Scratch*/
+.course-item-Scratch {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+
+/*HTML*/
+.course-item-HTML {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+
+/*Machine Learning*/
+.course-item-MachineLearning {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+
+/*Robotics*/
+.course-item-Robotics {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+
+/*SQL*/
+.course-item-SQL {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+
+/*CSS*/
+.course-item-CSS {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
+
+/*javascript*/
+.course-item-javascript {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #655eb1;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: black !important;
+}
+
 
 .course-item:hover {
 	transform: scale(1.05);

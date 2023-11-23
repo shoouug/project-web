@@ -56,7 +56,7 @@
     </div>
 
 
-
+<!--
     <div class="filter-dropdown">
         <label for="prerequisite-filter">Filter by Prerequisites:</label>
         <select id="prerequisite-filter" name="prerequisite-filter">
@@ -70,10 +70,19 @@
 			<option value="Age-Appropriate">10- 16 years</option>
 
         </select>
-    </div>
+    </div>  -->
 
 
     <div class="filter-dropdown">
+        <label for="prerequisite-filter">Filter by Prerequisites:</label>
+        <select id="prerequisite-filter" name="prerequisite-filter" onchange="filterCourses()">
+            <option value="all">All Prerequisites</option>
+            <!-- Prerequisite options will be dynamically added here using JavaScript -->
+        </select>
+    </div>
+
+
+    <!-- <div class="filter-dropdown">
         <label for="tutor-filter">Filter by Tutor:</label>
         <select id="tutor-filter" name="tutor-filter">
             <option value="all">All Tutors</option>
@@ -85,7 +94,16 @@
 			<option value="tutor2">Mona Khalid</option>
 
         </select>
+    </div>  -->
+
+    <div class="filter-dropdown">
+        <label for="tutor-filter">Filter by Tutor:</label>
+        <select id="tutor-filter" name="tutor-filter" onchange="filterCourses()">
+            <option value="all">All Tutors</option>
+            <!-- Tutor options will be dynamically added here using JavaScript -->
+        </select>
     </div>
+    
 	
 	
 </div>
@@ -95,40 +113,40 @@
         <div class="course-list">
             <ul>
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course1.png" alt="Course 1 Image">
+                    <div class="course-item-Java" data-prerequisite="">
+                        <img src="images/Course1.png" alt="Course 1 Image" height="50%" width="50%">
                         <p>Java </p>
                         <input type="checkbox" name="courses" value="course1">
                     </div>
                 </li>
 				
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course2.png" alt="Course 2">
+                    <div class="course-item-Python" data-prerequisite="SQL">
+                        <img src="images/Course2.png" alt="Course 2" height="60%" width="60%">
                         <p>Python </p>
                         <input type="checkbox" name="courses" value="course2">
                     </div>
                 </li>
 				
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course3.png" alt="Course 3">
+                    <div class="course-item-Scratch" data-prerequisite="">
+                        <img src="images/Course3.png" alt="Course 3" height="60%" width="60%">
                         <p>Scratch </p>
                         <input type="checkbox" name="courses" value="course3">
                     </div>
                 </li>
 				
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course4.png" alt="Course 4">
+                    <div class="course-item-HTML" data-prerequisite="">
+                        <img src="images/Course4.png" alt="Course 4" height="60%" width="60%">
                         <p>HTML </p>
                         <input type="checkbox" name="courses" value="course4">
                     </div>
                 </li>
 				
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course5.png" alt="Course 5">
+                    <div class="course-item-MachineLearning" data-prerequisite="Python">
+                        <img src="images/Course5.png" alt="Course 5" height="60%" width="60%">
                         <p>Machine Learning </p>
                         <input type="checkbox" name="courses" value="course5">
                     </div>
@@ -136,10 +154,37 @@
 				
 				
                 <li>
-                    <div class="course-item">
-                        <img src="images/Course6.png" alt="Course 6">
+                    <div class="course-item-Robotics" data-prerequisite="Python">
+                        <img src="images/Course6.png" alt="Course 6" height="60%" width="60%">
                         <p>Robotics</p>
                         <input type="checkbox" name="courses" value="course6">
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="course-item-SQL" data-prerequisite="Scratch">
+                        <img src="Images/Course7.png" alt="Course 7" height="60%" width="60%">
+                        <p>SQL</p>
+                        <input type="checkbox" name="courses" value="course7">
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="course-item-CSS" data-prerequisite="HTML">
+                        <img src="Images/Course8.png" alt="Course 8" height="60%" width="60%">
+                        <p>CSS</p>
+                        <input type="checkbox" name="courses" value="course8">
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="course-item-javascript" data-prerequisite="Java">
+                        <img src="Images/course9.png" alt="Course 9" height="60%" width="60%">
+                        <p>java script</p>
+                        <input type="checkbox" name="courses" value="course9">
                     </div>
                 </li>
 
