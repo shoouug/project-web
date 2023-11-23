@@ -112,7 +112,7 @@ section {
     top: 100%;
     left: 0;
     width: 350px;
-    height: 550px;
+
     padding: 10px;
     background-color: white;
     border: 3px solid #ccc;
@@ -122,6 +122,14 @@ section {
     z-index: 2;
     color: black !important;
 }
+
+ ol {
+    list-style-position: inside;
+}
+
+ dt{
+     font-weight:bold;
+ }
 
 .course:hover .description {
     display: block;
