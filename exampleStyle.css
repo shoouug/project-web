@@ -4,9 +4,7 @@
 
 
 
-body{
-background-color: hsl(212, 42%, 15%);
-}
+
 
 main {
     margin: 0;
@@ -20,7 +18,6 @@ main {
 .wrapper {
     display: flex;
 	overflow-x: auto; 
-    background-color: hsl(212, 42%, 15%);
    max-width:30%;	
    margin: auto;
 
@@ -37,17 +34,18 @@ main {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	justify-content:center;
+    justify-content: center;
+    color: black !important;
 }
 
-.wrapper::-webkit-scrollbar{
-	background-color:gray;
-	border-radius: 10px;
-
+.wrapper::-webkit-scrollbar {
+    background-color: hsl(212, 42%, 15%);
+    border-radius: 10px;
 }
-.wrapper::-webkit-Scrollbar-thumb{
-	background-color:white;
-	border-radius: 10px;
+
+.wrapper::-webkit-Scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
 }
 
 .kid-image {
@@ -60,38 +58,38 @@ main {
 }
 
     /* Style for the kid's name input field */
-    .kid-name {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid black ;
-     
-      border-radius: 5px;
-    }
+.kid-name {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    color: black !important;
+    border-radius: 5px;
+}
     
 
     /* Style for the registered courses box */
-    .registered-courses {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid black;
-      border-radius: 3px;
-      background-color: white;
-    }
+.registered-courses {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: white;
+    color: black !important;
+}
 
     /* Flex container for the boxes */
-    .flex-container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      background-color: #9d8484 ;
-	     border-radius: 10px;
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: slategray;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	     max-width:80%;
-	    margin:auto;
-     
-    }
+    max-width: 80%;
+    margin: auto;
+}
    
     
 	

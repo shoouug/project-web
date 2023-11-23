@@ -15,25 +15,22 @@ body{
         background-position: right bottom;
         background-attachment: scroll;
         justify-content: center;
-        background-color: #9d8484 ;
 
     
     }
 
 
 
-    .wrapper {
-
-        padding: 15px;
-        margin: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(1, 0, 0, 0.5); 
-        overflow-x: auto; 
-        width: 80%;
-        margin:auto;
-        background:  rgb(56, 56, 85);
-        
-    }
+.wrapper {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(1, 0, 0, 0.5);
+    overflow-x: auto;
+    width: 80%;
+    margin: auto;
+    background-color: slategray;
+}
     .wrapper::-webkit-scrollbar{
         background-color:gray;
         border-radius: 10px;
@@ -55,21 +52,21 @@ body{
         font-weight: bold;
         font-size: 1.5em;
         text-align: center;
-        color: #21397b;
+        color: slategray;
         letter-spacing: 1px;
         margin-top: 20px;
         margin-bottom: 30px; /* Add margin to the right */
     }
-    
-    .intro-container h3 {
-        color: #000000;
-        font-size: 1em;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
+
+        .intro-container h3 {
+            color: var(--secondry--color) ;
+            font-size: 1em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
     
     .Tutors {
         
