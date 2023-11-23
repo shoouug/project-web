@@ -104,7 +104,7 @@ header span {
     font-size: 14px;
     font-weight: bold;
     margin: 100px 0 10px; /* Add top margin to create separation */
-    color: #333;
+    color: var(--secondry--color);
     z-index: 998;
 }
 
