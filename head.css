@@ -25,24 +25,35 @@
 body {
     background-color: var(--primary--color) !important;
     color: var(--secondry--color) !important;
-}
-
-body {
     transition: background-color 0.5s, color 0.5s;
 }
 
 
 
+
+
+/* Styles for dark mode */
+.dark-mode #theme-toggle i {
+    color: black; /* Change icon color for dark mode */
+}
+
 #theme-toggle {
-    background: grey;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    border-radius: 15px;
+    width: 120px;
+    height: 34px;
+    padding:5px;
 }
 
 #mode-text {
     margin-left: 8px;
+}
+
+.dark-mode #mode-text {
+    color: black; /* Change text color for dark mode */
+}
+
+#mode-text:hover {
+    color: red;
 }
 
 
