@@ -1,27 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    updateParentDashboard();
+    var storedChildren = JSON.parse(localStorage.getItem("children"));
+
+    if (!storedChildren || storedChildren.length === 0) {
+
+        var children = ["Child1", "Child2"];
+        localStorage.setItem("children", JSON.stringify(children));
+        displayChildren(children);
+    } else {
+
+        displayChildren(storedChildren);
+    }
 });
 
-function updateParentDashboard() {
-    var storedChildren = localStorage.getItem("parentChildren");
+function displayChildren(children) {
 
-    if (!storedChildren) {
-       
-        var defaultChildrenNames = ["Ahmad Ali", "Fahad Ali"];
-        localStorage.setItem("parentChildren", JSON.stringify(defaultChildrenNames));
+    var childInfoDisplay = document.getElementsByClassName("kid-name");
+
+    for (var i = 0; i < childInfoDisplay.length; i++) {
+        childInfoDisplay[i].textContent = children[i];
     }
-
-   
-    var childrenNames = JSON.parse(localStorage.getItem("parentChildren")) || [];
-
-    
-    var kidNameElements = document.querySelectorAll(".kid-name");
-
-    for (var i = 0; i < kidNameElements.length; i++) {
-        kidNameElements[i].textContent = childrenNames[i] || "No Name";
-    }
-}
-
-function reloadParentDashboard() {
-    window.location.reload();
 }

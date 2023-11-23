@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="evaluationPage.css">
     <link rel="stylesheet" href="head.css">
-    <script src="theme-switch.js" defer></script>
     <script src="evaluation.js"></script>
     <script>
         function toggleStar(star) {
@@ -24,6 +23,7 @@
     }
 }
 </script>
+<script src="theme-switch.js" defer></script>
 </head>
 
 <body>
@@ -56,7 +56,8 @@
         <h1>Course evaluation</h1>
         <form id="feedback-form">
             <label for="course">Choose a course to evaluate</label>
-            <select id="course" name="course">
+            <select id="course" name="course" onchange="updateRatingStars()" required>
+                <option value="" disabled selected>Choose a course</option>
                 <option value="java">java</option>
                 <option value="Python">Python</option>
                 <option value="Scratch">Scratch</option>
@@ -65,7 +66,7 @@
                 <option value="Introduction to Robotics">Robotics</option>
             </select>
             
-            <p>Rate the course </p>
+            <p>Rate the course: </p>
             <div class="rating">
                 <span class="star" onclick="toggleStar(this)" >★</span> 
                 <span class="star" onclick="toggleStar(this)">★</span>

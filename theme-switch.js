@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle dark mode class on body
         body.classList.toggle("dark-mode");
 
-        // Toggle mode text
+        // Toggle icon and mode text
         const isDarkModeNow = body.classList.contains("dark-mode");
         modeText.textContent = isDarkModeNow ? "Light Mode" : "Dark Mode";
 
@@ -26,3 +26,4 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("darkMode", isDarkModeNow);
     }
 });
+
