@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const storedChildren = localStorage.getItem('childName');
+    var storedChildren = localStorage.getItem('childName');
   
     if (storedChildren) {
       var childrenNames = JSON.parse(storedChildren);
