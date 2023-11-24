@@ -46,74 +46,45 @@
 		
 <!-- Filters -->
 
-<div class="filter-container">
 
-    <div class="filter-dropdown">
-        <label for="kids-filter">Filter by Kids:</label>
-        <select id="kids-filter" name="kids-filter">
-            <option disabled selected>Kids</option>
-        </select>
+<form id="filterForm" onchange="filterCourses()">
+    <!-- Filters -->
+    <div class="filter-container">
+        <!-- Kids Filter -->
+        <div class="filter-dropdown">
+            <label for="kids-filter">Filter by Kids:</label>
+            <select id="kids-filter" name="kids-filter">
+                <option disabled selected>Select a child</option>
+                <!-- Kids options will be dynamically added here using JavaScript -->
+            </select>
+        </div>
+
+        <!-- Prerequisite Filter -->
+        <div class="filter-dropdown">
+            <label for="prerequisite-filter">Filter by Prerequisites:</label>
+            <select id="prerequisite-filter" name="prerequisite-filter">
+                <option value="all">All Prerequisites</option>
+                <!-- Prerequisite options will be dynamically added here using JavaScript -->
+            </select>
+        </div>
+
+        <!-- Tutor Filter -->
+        <div class="filter-dropdown">
+            <label for="tutor-filter">Filter by Tutor:</label>
+            <select id="tutor-filter" name="tutor-filter">
+                <option value="all">All Tutors</option>
+                <!-- Tutor options will be dynamically added here using JavaScript -->
+            </select>
+        </div>
     </div>
 
-
-<!--
-    <div class="filter-dropdown">
-        <label for="prerequisite-filter">Filter by Prerequisites:</label>
-        <select id="prerequisite-filter" name="prerequisite-filter">
-            <option value="all">All Prerequisites</option>
-            <option value="computer-skills">Computer Skills</option>
-            <option value="math-skills">Math Skills</option>
-			<option value="Reading-skills">Reading Skills</option>
-			<option value="Interest and Enthusiasm">Interest and Enthusiasm</option>
-			<option value="Age-Appropriate">8 - 14 years</option>
-			<option value="Age-Appropriate">7 - 12 years</option>
-			<option value="Age-Appropriate">10- 16 years</option>
-
-        </select>
-    </div>  -->
-
-
-    <div class="filter-dropdown">
-        <label for="prerequisite-filter">Filter by Prerequisites:</label>
-        <select id="prerequisite-filter" name="prerequisite-filter" onchange="filterCourses()">
-            <option value="all">All Prerequisites</option>
-            <!-- Prerequisite options will be dynamically added here using JavaScript -->
-        </select>
-    </div>
-
-
-    <!-- <div class="filter-dropdown">
-        <label for="tutor-filter">Filter by Tutor:</label>
-        <select id="tutor-filter" name="tutor-filter">
-            <option value="all">All Tutors</option>
-            <option value="tutor1">Fahad Omar</option>
-            <option value="tutor2">Sami Ahmed</option>
-			<option value="tutor2">Hind Saleh</option>
-			<option value="tutor2">Amal Abdullah</option>
-			<option value="tutor2">Najwa Hamed</option>
-			<option value="tutor2">Mona Khalid</option>
-
-        </select>
-    </div>  -->
-
-    <div class="filter-dropdown">
-        <label for="tutor-filter">Filter by Tutor:</label>
-        <select id="tutor-filter" name="tutor-filter" onchange="filterCourses()">
-            <option value="all">All Tutors</option>
-            <!-- Tutor options will be dynamically added here using JavaScript -->
-        </select>
-    </div>
-    
-	
-	
-</div>
 
 <!-- Courses -->
 
         <div class="course-list">
             <ul>
                 <li>
-                    <div class="course-item-Java" data-prerequisite="">
+                    <div class="course-item-Java" data-tutor="Amal Abdullah" data-prerequisite="">
                         <img src="images/Course1.png" alt="Course 1 Image" height="50%" width="50%">
                         <p>Java </p>
                         <input type="checkbox" name="courses" value="course1">
@@ -121,7 +92,7 @@
                 </li>
 				
                 <li>
-                    <div class="course-item-Python" data-prerequisite="SQL">
+                    <div class="course-item-Python" data-tutor="Mona Khaled" data-prerequisite="SQL">
                         <img src="images/Course2.png" alt="Course 2" height="60%" width="60%">
                         <p>Python </p>
                         <input type="checkbox" name="courses" value="course2">
@@ -129,7 +100,7 @@
                 </li>
 				
                 <li>
-                    <div class="course-item-Scratch" data-prerequisite="">
+                    <div class="course-item-Scratch" data-tutor="Najwa Hamad" data-prerequisite="">
                         <img src="images/Course3.png" alt="Course 3" height="60%" width="60%">
                         <p>Scratch </p>
                         <input type="checkbox" name="courses" value="course3">
@@ -137,7 +108,7 @@
                 </li>
 				
                 <li>
-                    <div class="course-item-HTML" data-prerequisite="">
+                    <div class="course-item-HTML" data-tutor="Fahad Omar" data-prerequisite="">
                         <img src="images/Course4.png" alt="Course 4" height="60%" width="60%">
                         <p>HTML </p>
                         <input type="checkbox" name="courses" value="course4">
@@ -145,7 +116,7 @@
                 </li>
 				
                 <li>
-                    <div class="course-item-MachineLearning" data-prerequisite="Python">
+                    <div class="course-item-MachineLearning" data-tutor="Hind Saleh" data-prerequisite="Python">
                         <img src="images/Course5.png" alt="Course 5" height="60%" width="60%">
                         <p>Machine Learning </p>
                         <input type="checkbox" name="courses" value="course5">
@@ -154,7 +125,7 @@
 				
 				
                 <li>
-                    <div class="course-item-Robotics" data-prerequisite="Python">
+                    <div class="course-item-Robotics" data-tutor="Sami Ahmed" data-prerequisite="Python">
                         <img src="images/Course6.png" alt="Course 6" height="60%" width="60%">
                         <p>Robotics</p>
                         <input type="checkbox" name="courses" value="course6">
@@ -163,7 +134,7 @@
 
 
                 <li>
-                    <div class="course-item-SQL" data-prerequisite="Scratch">
+                    <div class="course-item-SQL" data-tutor="Najwa Hamad" data-prerequisite="Scratch">
                         <img src="Images/Course7.png" alt="Course 7" height="60%" width="60%">
                         <p>SQL</p>
                         <input type="checkbox" name="courses" value="course7">
@@ -172,7 +143,7 @@
 
 
                 <li>
-                    <div class="course-item-CSS" data-prerequisite="HTML">
+                    <div class="course-item-CSS" data-tutor="Fahad Omar" data-prerequisite="HTML">
                         <img src="Images/Course8.png" alt="Course 8" height="60%" width="60%">
                         <p>CSS</p>
                         <input type="checkbox" name="courses" value="course8">
@@ -181,7 +152,7 @@
 
 
                 <li>
-                    <div class="course-item-javascript" data-prerequisite="Java">
+                    <div class="course-item-javascript" data-tutor="Amal Abdullah" data-prerequisite="Java">
                         <img src="Images/course9.png" alt="Course 9" height="60%" width="60%">
                         <p>java script</p>
                         <input type="checkbox" name="courses" value="course9">
@@ -190,8 +161,8 @@
 
             </ul>
         </div>
-
-        <button type="submit" class="enroll-button">Enroll Now</button>
+        <button id="filterForm" type="submit" class="enroll-button">Enroll Now</button>
+    </form>
     </main>
 
      <footer class="footer-distributed">

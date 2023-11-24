@@ -37,11 +37,16 @@ body {
     color: black; /* Change icon color for dark mode */
 }
 
+#theme-switcher{
+    position:absolute;
+    top:15vh;
+    margin-right:0;
+}
 #theme-toggle {
     border-radius: 15px;
     width: 120px;
     height: 34px;
-    padding:5px;
+    padding: 5px;
 }
 
 #mode-text {
@@ -104,7 +109,7 @@ header span {
     font-size: 14px;
     font-weight: bold;
     margin: 100px 0 10px; /* Add top margin to create separation */
-    color: #333;
+    color: var(--secondry--color);
     z-index: 998;
 }
 
@@ -165,6 +170,7 @@ header span {
         font-size: 1em;
         padding-left: 2vw;
     }
+
 }
 
 /* The footer */
@@ -182,6 +188,7 @@ footer {
     header {
         padding-top: 40px;
     }
+
 }
 
 .footer-distributed {

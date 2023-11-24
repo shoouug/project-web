@@ -3,11 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,100;1,500;1,900&display=swap');
 
 
-
-
-
-
-
 .main {
     width: 100%;
     min-height: 70vh;
@@ -15,235 +10,73 @@
     align-items: center;
     background: url(Images/enrollment.png) no-repeat;
     background-size: contain;
-    background-position:  right bottom;
+    background-position: right bottom;
     background-attachment: scroll;
     justify-content: center;
-	  padding-top: 50px;
+    padding-top: 50px;
 }
-
-
 
 .intro-container {
     width: 50%;
     justify-content: center;
     align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 0 80px;
     top: 0;
-    
 }
 
 .intro-container h2 {
     font-weight: bold;
-	font-size: 1.5em;
+    font-size: 1.5em;
     text-align: center;
     color: slategray;
     letter-spacing: 1px;
     margin-top: 20px;
-    margin-bottom: 30px; /* Add margin to the right */
+    margin-bottom: 30px;
 }
 
-    .intro-container h3 {
-        color: var(--secondry--color);
-        font-size: 1em;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-
-
+.intro-container h3 {
+    color: var(--secondry--color);
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
 /* Style for the filter container */
 .filter-container {
     text-align: center;
     margin: 20px 0;
-	
 }
 
-.filter-dropdown{
-	font-size: 1.3em;
-	font-weight: bold;
+.filter-dropdown {
+    font-size: 1.3em;
+    font-weight: bold;
 }
-
-
-
 
 /* Style for the course list */
 .course-list ul {
-	
-	margin:  30px auto;
+    margin: 30px auto;
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Center horizontally */
-	width: 60%; /* Adjust the maximum width as needed */
+    justify-content: space-around;
+    width: 60%;
     height: auto;
-
 }
 
 /* Style for individual course items */
 /*java*/
-.course-item-Java {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-/*Python*/
-.course-item-Python {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-/*Scratch*/
-.course-item-Scratch {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-
-/*HTML*/
-.course-item-HTML {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-
-/*Machine Learning*/
-.course-item-MachineLearning {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-
-/*Robotics*/
-.course-item-Robotics {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-
-/*SQL*/
-.course-item-SQL {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-
-/*CSS*/
-.course-item-CSS {
-    font-size: 1em;
-    font-weight: bold;
-    background-color: white;
-    border: 1px solid #655eb1;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    height: 180px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    color: black !important;
-}
-
-
-/*javascript*/
+.course-item-Java,
+.course-item-Python,
+.course-item-Scratch,
+.course-item-HTML,
+.course-item-MachineLearning,
+.course-item-Robotics,
+.course-item-SQL,
+.course-item-CSS,
 .course-item-javascript {
     font-size: 1em;
     font-weight: bold;
@@ -261,22 +94,21 @@
     color: black !important;
 }
 
-
 .course-item:hover {
-	transform: scale(1.05);
-	background-color : lightgrey;
+    transform: scale(1.05);
+    background-color: lightgrey;
 }
 
 /* Style for course images */
 .course-item img {
-    max-width: 70%; /* Make sure the images fit within the course item */
-	height : 50%
+    max-width: 70%;
+    height: 50%;
 }
 
 /* Style for the enroll button */
 .enroll-button {
-	font-size: 1.3em;
-	font-weight: bold;
+    font-size: 1.3em;
+    font-weight: bold;
     display: block;
     margin: 20px auto;
     padding: 20px 30px;
@@ -286,4 +118,3 @@
     border-radius: 20px;
     cursor: pointer;
 }
-
