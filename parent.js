@@ -1,3 +1,5 @@
+// parent.js
+
 document.addEventListener("DOMContentLoaded", function () {
     var storedChildren = JSON.parse(localStorage.getItem("parentChildren"));
 
