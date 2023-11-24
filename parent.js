@@ -1,26 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var storedChildren = JSON.parse(localStorage.getItem("parentChildren")) || [];
-
-    if (storedChildren.length === 0) {
-        var defaultChildrenNames = ["Ahmad Ali", "Fahad Ali"]; 
-        storedChildren = defaultChildrenNames;
-        localStorage.setItem("parentChildren", JSON.stringify(defaultChildrenNames));
+document.addEventListener('DOMContentLoaded', function () {
+    const storedChildren = localStorage.getItem('parentChildren');
+  
+    if (storedChildren) {
+      const childrenNames = JSON.parse(storedChildren);
+      localStorage.removeItem('parentChildren'); 
+      displayChildren(childrenNames);
     }
-
-    displayChildren(storedChildren);
-});
-
-function displayChildren(childrenNames) {
-    var wrapper = document.querySelector(".wrapper");
-
-    wrapper.innerHTML = "";
-
-    childrenNames.forEach(function (childName) {
-        var childElement = document.createElement("div");
-        childElement.classList.add("child-box");
-        childElement.textContent = childName;
-
-        wrapper.appendChild(childElement);
-    });
-}
+  
+    function displayChildren(names) {
+      const wrapper = document.querySelector('.wrapper');
+      wrapper.innerHTML = ''; 
+  
+      names.forEach(name => {
+        const childBox = document.createElement('div');
+        childBox.classList.add('child-box');
+        childBox.textContent = name;
+        wrapper.appendChild(childBox);
+      });
+    }
+  });
 
