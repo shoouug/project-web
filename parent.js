@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function displayChildren(childrenNames) {
+    console.log("Displaying children:", childrenNames);
 
     var wrapper = document.querySelector(".wrapper");
 
@@ -24,6 +25,8 @@ function displayChildren(childrenNames) {
 
         wrapper.appendChild(childElement);
     });
+
+    console.log("Children displayed successfully.");
 }
 
 
