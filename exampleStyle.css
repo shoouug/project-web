@@ -13,7 +13,7 @@ main {
 
 .wrapper {
     display: flex;
-	overflow-x: scroll; 
+	 overflow-x: scroll; 
    max-width:25%;	
    margin: auto;
 
@@ -33,7 +33,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	background-image: url('Images/kidparent.png');
 	background-size: cover;
-	
+	color: black;
 	
 	
 }
