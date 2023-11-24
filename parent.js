@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const storedChildren = localStorage.getItem('parentChildren');
+    const storedChildren = localStorage.getItem('childName');
   
     if (storedChildren) {
       const childrenNames = JSON.parse(storedChildren);
-      localStorage.removeItem('parentChildren'); 
       displayChildren(childrenNames);
     }
   
