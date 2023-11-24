@@ -1,22 +1,25 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-    var storedChildren = JSON.parse(localStorage.getItem("children"));
+    var storedChildren = JSON.parse(localStorage.getItem("parentChildren"));
 
-    if (!storedChildren || storedChildren.length === 0) {
 
-        var children = ["Child1", "Child2"];
-        localStorage.setItem("children", JSON.stringify(children));
-        displayChildren(children);
+    if (!storedChildren) {
+        var childrenNames = ["Ali ahmad", "Fahad ahmad"]; 
+        localStorage.setItem("parentChildren", JSON.stringify(childrenNames));
+        displayChildren(childrenNames);
     } else {
-
         displayChildren(storedChildren);
     }
 });
 
-function displayChildren(children) {
+function displayChildren(childrenNames) {
+    var wrapper = document.querySelector(".wrapper");
 
-    var childInfoDisplay = document.getElementsByClassName("kid-name");
+    childrenNames.forEach(function (childName) {
+        var childElement = document.createElement("div");
+        childElement.classList.add("child-box");
+        childElement.textContent = childName;
 
-    for (var i = 0; i < childInfoDisplay.length; i++) {
-        childInfoDisplay[i].textContent = children[i];
-    }
+        wrapper.appendChild(childElement);
+    });
 }
