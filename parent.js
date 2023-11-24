@@ -22,3 +22,4 @@ function displayChildren(childrenNames) {
         wrapper.appendChild(childElement);
     });
 }
+
