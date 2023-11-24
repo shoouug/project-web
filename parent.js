@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var storedChildren = JSON.parse(localStorage.getItem("parentChildren"));
 
     if (!storedChildren) {
-        var childrenNames = ["Ali", "Fahad"]; 
+        var childrenNames = ["Ahmad Ali", "Fahad Ali"]; 
         localStorage.setItem("parentChildren", JSON.stringify(childrenNames));
         displayChildren(childrenNames);
     } else {
