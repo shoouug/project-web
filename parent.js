@@ -6,16 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
       displayChildren(childrenNames);
     }
   
-    function displayChildren(names) {
-      var wrapper = document.querySelector('.wrapper');
-      wrapper.innerHTML = ''; 
-  
-      names.forEach(name => {
-        var childBox = document.createElement('div');
-        childBox.classList.add('child-box');
-        childBox.textContent = name;
-        wrapper.appendChild(childBox);
-      });
-    }
-  });
 
+  function displayChildren(childrenNames) {
+    var wrapper = document.querySelector(".wrapper");
+    wrapper.innerHTML = ''; 
+    childrenNames.forEach(function (childName) {
+        var childElement = document.createElement("div");
+        childElement.classList.add("child-box");
+        childElement.textContent = childName;
+
+        wrapper.appendChild(childElement);
+    });
+}
