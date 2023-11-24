@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var storedChildren = localStorage.getItem('childName');
-  
-    if (storedChildren) {
-      var childrenNames = JSON.parse(storedChildren);
-      displayChildren(childrenNames);
+        // Retrieve the array of registered names from local storage
+ var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
+
+    var childName = localStorage.getItem("childName");
+    if (childName) {
+        // Add the new child name to the array if it doesn't exist
+        if (!kidsNames.includes(childName)) {
+            kidsNames.push(childName);
+
+            // Update local storage with the modified array
+            localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+        }
     }
-  
 });
 function displayChildren(childrenNames) {
     var wrapper = document.querySelector(".wrapper");
