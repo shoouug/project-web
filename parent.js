@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
       displayChildren(childrenNames);
     }
   
-
-  function displayChildren(childrenNames) {
+});
+function displayChildren(childrenNames) {
     var wrapper = document.querySelector(".wrapper");
     wrapper.innerHTML = ''; 
     childrenNames.forEach(function (childName) {
