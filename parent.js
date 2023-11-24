@@ -1,19 +1,17 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     var storedChildren = JSON.parse(localStorage.getItem("parentChildren"));
-
     if (!storedChildren) {
-        var childrenNames = ["Ahmad Ali", "Fahad Ali"]; 
-        localStorage.setItem("parentChildren", JSON.stringify(childrenNames));
-        displayChildren(childrenNames);
-    } else {
-  
-        displayChildren(storedChildren);
+        var defaultChildrenNames = ["Ahmad Ali", "Fahad Ali"]; 
+        storedChildren = defaultChildrenNames;
+        localStorage.setItem("parentChildren", JSON.stringify(defaultChildrenNames));
     }
+
+    displayChildren(storedChildren);
 });
 
 function displayChildren(childrenNames) {
     var wrapper = document.querySelector(".wrapper");
+    wrapper.innerHTML = "";
 
     childrenNames.forEach(function (childName) {
         var childElement = document.createElement("div");
