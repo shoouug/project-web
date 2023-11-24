@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update local storage with the modified array
             localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
         }
+
     }
+    displayChildren(kidsNames);
 });
 function displayChildren(childrenNames) {
     var wrapper = document.querySelector(".wrapper");
