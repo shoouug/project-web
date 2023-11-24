@@ -24,4 +24,8 @@ function displayChildren(childrenNames) {
         wrapper.appendChild(childElement);
     });
 }
+function displayChildren(childrenNames) {
+    console.log("Displaying children:", childrenNames);
+    // ... rest of the function
+}
 
