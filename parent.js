@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function displayChildren(childrenNames) {
-    console.log("Displaying children:", childrenNames);
+
     var wrapper = document.querySelector(".wrapper");
 
     childrenNames.forEach(function (childName) {
