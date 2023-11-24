@@ -4,9 +4,7 @@
 
 
 
-body{
-background-color: hsl(212, 42%, 15%);
-}
+
 
 main {
     margin: 0;
@@ -62,7 +60,7 @@ justify-content:center;
 	
 	.child-box::before{
 
-		content: "        Kid's Name      "  ;
+		content: "Kid's Name "  ;
 font-size: 20px;
 	  margin:auto;
 	  justify-content: center;
