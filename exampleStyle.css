@@ -19,7 +19,7 @@ main {
     display: flex;
 	overflow-x: auto; 
     background-color: hsl(212, 42%, 15%);
-   max-width:25%;	
+   max-width:50%;	
    margin: auto;
 justify-content:center;
 
