@@ -6,15 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Check if childName exists
     if (childName && !kidsNames.includes(childName)) {
-        // Add the new child name to the array
         kidsNames.push(childName);
-
-        // Update local storage with the modified array
         localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+        displayChildren(kidsNames);
     }
 
-    // Display the children's names from local storage in the dashboard
-    displayChildren(kidsNames);
+   
 
     function displayChildren(names) {
         // Display children's names in the dashboard
