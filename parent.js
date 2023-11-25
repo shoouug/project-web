@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
     if (kidsNames.length === 0) {
-        const defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
         displayChildren(defaultChildrenNames);
     } else {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        names.forEach(name => {
+        names.forEachforEach(function (name) {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
