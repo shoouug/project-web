@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var registeredNames = JSON.parse(localStorage.getItem("registeredNames")) || [];
 
     // Retrieve child name from local storage
-    var childName = localStorge.getItem("childName");
+    var childName = localStorage.getItem("childName");
 
     // Populate the kids filter dropdown with the retrieved child name
     var kidsFilterDropdown = document.getElementById("kids-filter");
