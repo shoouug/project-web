@@ -460,11 +460,11 @@ document.getElementById("filterForm").addEventListener("submit", function (event
 
     // Form validation
 
-    if (!selectedKid || selectedKid === "Kids" && !selectedCourse) {
+    if (!selectedKid || selectedKid === "Kids" || selectedKid === ""  && !selectedCourse) {
         alert("Please select a child and course!");
         return; // Stop proceeding if no child is selected
     }
-    
+
     if (!selectedKid || selectedKid === "Kids") {
         alert("Please select a child.");
         return; // Stop proceeding if no child is selected
