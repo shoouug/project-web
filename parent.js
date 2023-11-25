@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        names.forEachforEach(function (name) {
+        names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
