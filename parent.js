@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
-    
     if (kidsNames.length === 0) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
-        localStorage.setItem("childName", ""); // Set an empty string or a default value for childName
         displayChildren(defaultChildrenNames);
     } else {
         if (childName) {
@@ -13,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 kidsNames.push(childName);
                 localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
             }
+            
         }
         displayChildren(kidsNames);
     }

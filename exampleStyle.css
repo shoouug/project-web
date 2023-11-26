@@ -77,17 +77,16 @@ font-size: 20px;
     }
 
     /* Flex container for the boxes */
-    .flex-container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      background-color: #9d8484 ;
-	     border-radius: 10px;
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: slategray;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	     max-width:80%;
-	    margin:auto;
-     
-    }
+    max-width: 80%;
+    margin: auto;
+}
    
     
 	
