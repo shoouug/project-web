@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var allNames = JSON.parse(localStorage.getItem("allNames")) || [];
     var childName = localStorage.getItem("childName");
-
+    var defaultNamesRemoved = false;
 
     if (!childName) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     } else {
         allNames.push(childName);
-        if ( allNames.length > 2) {
+
+        if (!defaultNamesRemoved && allNames.length > 2) {
             allNames = allNames.slice(2);
-           
+            defaultNamesRemoved = true;
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
-        
     }
 
     displayAllNames(allNames);
