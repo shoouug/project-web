@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
         displayChildren(defaultChildrenNames);
     } else {
-        if (childName) {
-            if (!kidsNames.includes(childName)) {
-                kidsNames.push(childName);
-                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-            }
+        if (childName && !kidsNames.includes(childName)) {
+            kidsNames.push(childName);
+            localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
         }
-        // Delete the default names only if there are new names
-        if (kidsNames.length > 0 && !childName) {
+
+        // Remove default names if there are new names
+        if (childName) {
             localStorage.removeItem("kidsNames");
         }
+
         displayChildren(kidsNames);
     }
 
