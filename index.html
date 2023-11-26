@@ -11,6 +11,36 @@
     <link rel="stylesheet" href="head.css">
     <!-- Theme Switching Script -->
     <script src="theme-switch.js" defer></script>
+
+    <!-- script to enable slider controls -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var slides = document.getElementById("slides");
+            var prevButton = document.getElementById("prev");
+            var nextButton = document.getElementById("next");
+
+            var currentIndex = 0;
+
+            nextButton.addEventListener("click", function () {
+                if (currentIndex < slides.children.length - 1) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+
+            prevButton.addEventListener("click", function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+
+            function updateSlider() {
+                var translateValue = -currentIndex * 100 + "%";
+                slides.style.transform = "translateX(" + translateValue + ")";
+            }
+        });
+    </script>
     <title>Code Crusher</title>
 
 </head>
@@ -224,10 +254,10 @@
                             <div class="card__data">
                                 <h3 class="card-title">SQL</h3>
                                 <div class="card__name">
-                                    The SQL course introduces children<br> 
-                                to the basics of database management and <br>
-                                querying through hands-on projects 
-                                <br>and engaging activities.
+                                    The SQL course introduces children<br>
+                                    to the basics of database management and <br>
+                                    querying through hands-on projects
+                                    <br>and engaging activities.
                                 </div><br>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -288,6 +318,65 @@
 
 
 
+    <!-- <section>
+         <h2 id="review">The Parents Review</h2><br>
+         <div class="review-container">
+             <div id="text-review">
+                 <p>Kids love Code Crusher!<br> So do teachers and parents!</p><br>
+             </div>
+
+             <div id="slider">
+                 <input type="radio" name="slider" id="slide1" checked>
+                 <input type="radio" name="slider" id="slide2">
+                 <input type="radio" name="slider" id="slide3">
+                 <input type="radio" name="slider" id="slide4">
+
+                 <div id="slides">
+                     <div id="overflow">
+                         <div class="inner">
+                             <div class="slide slide_1">
+                                 <div class="slide-content">
+                                     <img src="Images/tweet1.png" alt="review 1" class="tweet">
+
+                                 </div>
+                             </div>
+                             <div class="slide slide_2">
+                                 <div class="slide-content">
+                                     <img src="Images/tweet2.png" alt="review 2" class="tweet">
+
+                                 </div>
+                             </div>
+                             <div class="slide slide_3">
+                                 <div class="slide-content">
+                                     <img src="Images/tweet3.png" alt="review 3" class="tweet">
+
+                                 </div>
+                             </div>
+                             <div class="slide slide_4">
+                                 <div class="slide-content">
+                                     <img src="Images/tweet4.png" alt="review 4" class="tweet">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+                 <div id="controls">
+                     <label for="slide1"></label>
+                     <label for="slide2"></label>
+                     <label for="slide3"></label>
+                     <label for="slide4"></label>
+                 </div>
+                 <div id="bullets">
+                     <label for="slide1"></label>
+                     <label for="slide2"></label>
+                     <label for="slide3"></label>
+                     <label for="slide4"></label>
+                 </div>
+             </div>
+         </div>
+     </section> -->
+
     <section>
         <h2 id="review">The Parents Review</h2><br>
         <div class="review-container">
@@ -296,52 +385,31 @@
             </div>
 
             <div id="slider">
-                <input type="radio" name="slider" id="slide1" checked>
-                <input type="radio" name="slider" id="slide2">
-                <input type="radio" name="slider" id="slide3">
-                <input type="radio" name="slider" id="slide4">
-
                 <div id="slides">
-                    <div id="overflow">
-                        <div class="inner">
-                            <div class="slide slide_1">
-                                <div class="slide-content">
-                                    <img src="Images/tweet1.png" alt="review 1" class="tweet">
-
-                                </div>
-                            </div>
-                            <div class="slide slide_2">
-                                <div class="slide-content">
-                                    <img src="Images/tweet2.png" alt="review 2" class="tweet">
-
-                                </div>
-                            </div>
-                            <div class="slide slide_3">
-                                <div class="slide-content">
-                                    <img src="Images/tweet3.png" alt="review 3" class="tweet">
-
-                                </div>
-                            </div>
-                            <div class="slide slide_4">
-                                <div class="slide-content">
-                                    <img src="Images/tweet4.png" alt="review 4" class="tweet">
-                                </div>
-                            </div>
+                    <div class="slide slide_1">
+                        <div class="slide-content">
+                            <img src="Images/tweet1.png" alt="review 1" class="tweet">
                         </div>
                     </div>
-
+                    <div class="slide slide_2">
+                        <div class="slide-content">
+                            <img src="Images/tweet2.png" alt="review 2" class="tweet">
+                        </div>
+                    </div>
+                    <div class="slide slide_3">
+                        <div class="slide-content">
+                            <img src="Images/tweet3.png" alt="review 3" class="tweet">
+                        </div>
+                    </div>
+                    <div class="slide slide_4">
+                        <div class="slide-content">
+                            <img src="Images/tweet4.png" alt="review 4" class="tweet">
+                        </div>
+                    </div>
                 </div>
-                <div id="controls">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                    <label for="slide4"></label>
-                </div>
-                <div id="bullets">
-                    <label for="slide1"></label>
-                    <label for="slide2"></label>
-                    <label for="slide3"></label>
-                    <label for="slide4"></label>
+                <div class="controls">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
                 </div>
             </div>
         </div>
