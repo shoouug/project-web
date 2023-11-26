@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     } else {
         allNames.push(childName);
-
-        if (!defaultNamesRemoved && allNames.length > 2) {
             allNames = allNames.slice(2);
             defaultNamesRemoved = true;
             localStorage.setItem("allNames", JSON.stringify(allNames));
