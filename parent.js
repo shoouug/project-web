@@ -1,34 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var allNames = JSON.parse(localStorage.getItem("allNames")) || [];
     var childName = localStorage.getItem("childName");
-    
+    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+    var enteredNames = JSON.parse(localStorage.getItem("enteredNames")) || [];
 
-    if (allNames.length === 0) {
-        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        allNames = allNames.concat(defaultChildrenNames);
-        localStorage.setItem("allNames", JSON.stringify(allNames));
-        
-    }
-    displayAllNames("allNames")
+    if (childName) {
+        // Add the new name
+        enteredNames.push(childName);
 
-    if (childName && !allNames.includes(childName)) {
-        allNames.push(childName);
-        localStorage.setItem("allNames", JSON.stringify(allNames));
-        displayAllNames(allNames.slice(2));
+        // Combine default names with entered names and remove the first two indexes
+        var combinedNames = defaultChildrenNames.concat(enteredNames.slice(2));
+
+        localStorage.setItem("enteredNames", JSON.stringify(combinedNames));
     }
 
-
+    displayAllNames(enteredNames);
 
     function displayAllNames(names) {
         var wrapper = document.querySelector('.wrapper');
         // Clear previous content
         wrapper.innerHTML = '';
 
-        names.forEach(name => {
-            var childBox = document.createElement('div');
-            childBox.classList.add('child-box');
-            childBox.textContent = name;
-            wrapper.appendChild(childBox);
-        });
+        if (names.length === 0) {
+            // Display default names if no entered names
+            defaultChildrenNames.forEach(name => {
+                var childBox = document.createElement('div');
+                childBox.classList.add('child-box');
+                childBox.textContent = name;
+                wrapper.appendChild(childBox);
+            });
+        } else {
+            // Display combined names after removing the first two indexes
+            names.slice(2).forEach(name => {
+                var childBox = document.createElement('div');
+                childBox.classList.add('child-box');
+                childBox.textContent = name;
+                wrapper.appendChild(childBox);
+            });
+        }
     }
 });
