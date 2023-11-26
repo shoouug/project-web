@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 kidsNames.push(childName);
                 localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
             }
-            displayChildren(kidsNames.filter(name => !['Ahmad Ali', 'Fahad Ali'].includes(name)));
+            displayChildren(kidsNames);
         }
        
     }
