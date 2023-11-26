@@ -55,28 +55,34 @@ function validateForm() {
 
     return true;
 }
-
 function displayChildInformation(childInfo) {
-  
     var newWindow = window.open('', '_blank');
 
     newWindow.document.write('<html><head></head><body style="margin: 20px; padding: 20px; box-sizing: border-box;">');
-
     
     newWindow.document.write('<div style="border: 1px solid black; padding: 10px; box-sizing: border-box;">');
 
     var imageUrl = URL.createObjectURL(childInfo.photo);
-
     
-    newWindow.document.write('<img src="' + imageUrl + '" alt="Child\'s Photo" style="width: 100px; height: 100px; margin-bottom: 10px; box-sizing: border-box;">');
+    // Create an image element and set its source
+    var image = new Image();
+    image.src = imageUrl;
 
-  
-    newWindow.document.write('<p>Name: ' + childInfo.name + '</p>');
-    newWindow.document.write('<p>Gender: ' + childInfo.gender + '</p>');
-    newWindow.document.write('<p>DOB: ' + childInfo.age + '</p>');
-    newWindow.document.write('<p>Email: ' + childInfo.email + '</p>');
-    newWindow.document.write('<p>Phone: ' + childInfo.phone + '</p>');
+    // Attach an onload event to ensure the image is loaded
+    image.onload = function() {
+        newWindow.document.write('<img src="' + imageUrl + '" alt="Child\'s Photo" style="width: 100px; height: 100px; margin-bottom: 10px; box-sizing: border-box;">');
 
-    newWindow.document.write('</div></body></html>');
-    newWindow.document.close();
+        newWindow.document.write('<p>Name: ' + childInfo.name + '</p>');
+        newWindow.document.write('<p>Gender: ' + childInfo.gender + '</p>');
+        newWindow.document.write('<p>DOB: ' + childInfo.age + '</p>');
+        newWindow.document.write('<p>Email: ' + childInfo.email + '</p>');
+        newWindow.document.write('<p>Phone: ' + childInfo.phone + '</p>');
+
+        newWindow.document.write('</div></body></html>');
+        newWindow.document.close();
+
+        // Trigger the print dialog
+        newWindow.print();
+        //
+    };
 }
