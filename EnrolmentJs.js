@@ -1,4 +1,3 @@
-
 //1
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -6,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var registeredNames = JSON.parse(localStorage.getItem("registeredNames")) || [];
 
     // Retrieve child name from local storage
-    var childName = localStorge.getItem("childName");
+    var childName = localStorage.getItem("childName");
 
     // Populate the kids filter dropdown with the retrieved child name
     var kidsFilterDropdown = document.getElementById("kids-filter");
@@ -369,11 +368,6 @@ document.getElementById("tutor-filter").addEventListener("change", filterCourses
     // Populate the kids filter dropdown
     var kidsFilterDropdown = document.getElementById("kids-filter");
 
-    // Add options to the dropdown
-    var defaultOption = document.createElement("option");
-    defaultOption.value = "Kids";
-    defaultOption.textContent = "Select a child";
-    kidsFilterDropdown.appendChild(defaultOption);
 
     // Add all registered kids' names to the dropdown
     registeredKids.forEach(function (kidName) {
@@ -382,6 +376,8 @@ document.getElementById("tutor-filter").addEventListener("change", filterCourses
         option.textContent = kidName;
         kidsFilterDropdown.appendChild(option);
     });
+
+    kidsFilterDropdown.value = "";
 
     // Populate the prerequisite filter dropdown
     var prerequisiteFilterDropdown = document.getElementById("prerequisite-filter");
@@ -463,6 +459,12 @@ document.getElementById("filterForm").addEventListener("submit", function (event
     var selectedTutor = document.getElementById("tutor-filter").value;
 
     // Form validation
+
+    if (!selectedKid || selectedKid === "Kids" || selectedKid === ""  && !selectedCourse) {
+        alert("Please select a child and course!");
+        return; // Stop proceeding if no child is selected
+    }
+
     if (!selectedKid || selectedKid === "Kids") {
         alert("Please select a child.");
         return; // Stop proceeding if no child is selected
@@ -474,6 +476,7 @@ document.getElementById("filterForm").addEventListener("submit", function (event
         alert("Please select a course.");
         return;
     }
+
 
     // Display the information on an alert message
     alert("Enrolled successfully!\n\nChild: " + selectedKid + "\nCourse: " + selectedCourse.parentElement.querySelector("p").textContent);
@@ -499,4 +502,3 @@ document.getElementById("filterForm").addEventListener("submit", function (event
     localStorage.setItem("selectedPrerequisite", selectedPrerequisite);
     localStorage.setItem("selectedTutor", selectedTutor);
 });
-
