@@ -405,9 +405,60 @@ p {
 }
 
 
+#slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+    #slides .slide {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+    /* Updated CSS with styled arrows */
+
+    /* ... (Your existing styles) */
+
+    .controls button {
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        background-color: lightgray; /* Change the background color as needed */
+    }
+
+
+
+/* End of Updated CSS */
 
 
 /*reviews*/
+
 .review-container {
     display: flex;
     flex-direction: column;
@@ -424,7 +475,7 @@ p {
     font: normal 36px 'Cookie', cursive;
 }
 
-.review-container #slider {
+/*.review-container #slider {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -432,9 +483,9 @@ p {
     margin-top: 20px; /* Adjust as needed */
 }
 
-#slider {
-    width: 65%; /* Adjust the width as needed */
-    max-width: 800px; /* Set a maximum width if desired */
+/*#slider {
+    width: 65%; /* Adjust the width as needed 
+    max-width: 800px; /* Set a maximum width if desired 
     text-align: center;
 }
 
@@ -538,13 +589,13 @@ p {
         margin: 0;
     }
 
-   /* #slides {
+   #slides {
         max-width: calc(100% - 140px);
         margin: 0 auto;
-    }*/
+    }
 
     #slides {
-        max-width: 100%; /* Adjust as needed */
+        max-width: 100%; /* Adjust as needed 
     }
 }
 
@@ -553,4 +604,4 @@ p {
     height: auto;
     width: 100%;
     border-radius: 0.7rem;
-}
+}*/
