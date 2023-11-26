@@ -538,15 +538,19 @@ p {
         margin: 0;
     }
 
-    #slides {
+   /* #slides {
         max-width: calc(100% - 140px);
         margin: 0 auto;
+    }*/
+
+    #slides {
+        max-width: 100%; /* Adjust as needed */
     }
 }
 
 
 .tweet {
-    height: 100%;
+    height: auto;
     width: 100%;
     border-radius: 0.7rem;
 }
