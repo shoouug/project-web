@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="head.css">
-    <!--<script src="adm.js" defer></script>-->
+   
     <script src="theme-switch.js" defer></script>
 
 <style>
@@ -83,7 +83,7 @@
 
                 // Hide the "Load More" button if there are no more items
                 if (currentitems >= elementList.length) {
-                    loadmore.classList.add('loaded');
+                    loadmore.style.display = 'none';
                 }
             });
         });
