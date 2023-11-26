@@ -1,30 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var allNames = JSON.parse(localStorage.getItem("allNames")) || [];
+    var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
-
-    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-
-    if (!childName) {
-        if (allNames.length === 0) {
-            allNames = allNames.concat(defaultChildrenNames);
-            localStorage.setItem("allNames", JSON.stringify(allNames));
-        }
+    
+    if (kidsNames.length === 0) {
+        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
+        localStorage.setItem("childName", ""); // Set an empty string or a default value for childName
+        displayChildren(defaultChildrenNames);
     } else {
-        // Add the new name
-        allNames.push(childName);
-
-        // Remove default names after adding a new name
-        allNames = allNames.slice(defaultChildrenNames.length);
-        localStorage.setItem("allNames", JSON.stringify(allNames));
+        if (childName) {
+            if (!kidsNames.includes(childName)) {
+                kidsNames.push(childName);
+                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+            }
+        }
+        displayChildren(kidsNames);
     }
 
-    displayAllNames(allNames);
-
-    function displayAllNames(names) {
+    function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        // Clear previous content
-        wrapper.innerHTML = '';
-
         names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
