@@ -10,15 +10,88 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="head.css">
-    <script src="adm.js" defer></script>
+    <!--<script src="adm.js" defer></script>-->
     <script src="theme-switch.js" defer></script>
 
+<style>
+   
+.courses li .names1 .kid-name,
+.courses li .names2 .kid-name,
+.courses li .names3 .kid-name,
+.courses li .names4 .kid-name,
+.courses li .names5 .kid-name,
+.courses li .names6 .kid-name,
+.courses li .names7 .kid-name,
+.courses li .names8 .kid-name,
+.courses li .names9 .kid-name {
+    display: none;
+}
 
 
+.courses li .names1 .kid-name.visible,
+.courses li .names2 .kid-name.visible,
+.courses li .names3 .kid-name.visible,
+.courses li .names4 .kid-name.visible,
+.courses li .names5 .kid-name.visible,
+.courses li .names6 .kid-name.visible,
+.courses li .names7 .kid-name.visible,
+.courses li .names8 .kid-name.visible,
+.courses li .names9 .kid-name.visible {
+    display: inline-block;
+}
 
 
+.names1 li.kid-name.hidden,
+.names2 li.kid-name.hidden,
+.names3 li.kid-name.hidden,
+.names4 li.kid-name.hidden,
+.names5 li.kid-name.hidden,
+.names6 li.kid-name.hidden,
+.names7 li.kid-name.hidden,
+.names8 li.kid-name.hidden,
+.names9 li.kid-name.hidden {
+    display: none;
+}
+
+</style>
+  
 </head>
 <body> 
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const loadmoreButtons = document.querySelectorAll('.load-more');
+
+        loadmoreButtons.forEach((loadmore, index) => {
+            let currentitems = 3;
+
+            loadmore.addEventListener('click', function (e) {
+                const elementList = [...document.querySelectorAll(`.names${index + 1} li`)];
+                loadmore.classList.add('show-loader');
+
+                for (let i = currentitems; i < currentitems + 3; i++) {
+                    setTimeout(function () {
+                        loadmore.classList.remove('show-loader');
+                        if (elementList[i]) {
+                            elementList[i].style.display = 'flex';
+                        }
+                    }, 300 * (i - currentitems + 1));
+                }
+
+                currentitems += 3;
+
+                // Hide the "Load More" button if there are no more items
+                if (currentitems >= elementList.length) {
+                    loadmore.classList.add('loaded');
+                }
+            });
+        });
+    });
+</script>
+
+
+
     <header>
         <a class="logo">Code<span>Crusher</span></a>
         <nav class="navigation">
@@ -34,9 +107,10 @@
     <a href="index.html">Home</a> &gt; &gt;
     <a href="test.html">Administrator </a>
 </div>
-<script>
-    displayRegisteredChild();
-</script>
+
+
+
+
 <div id="childInfoDisplay"></div>
 <main>
 
@@ -116,15 +190,20 @@
             Course name :Introduction of Java
             <ul>
                 <li> Tutor name: Amal abdullah  </li>
+
+
                 <li>
+                  
+
                     Crushers rigested:
-                    <ul>
-                        <li>Njood sultan</li>
-                        <li>Jod satam</li>
-                        <li>Ali mohamed</li>
-                        <li>Faisl yasser</li>
-                        <li>Abeer zyad</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                    <ul class="names1">
+                        <li >Njood sultan</li>
+                        <li >Jod satam</li>
+                        <li >Ali mohamed</li>
+                        <li class="kid-name hidden">Faisl yasser</li>
+                        <li class="kid-name hidden">Abeer zyad</li>
+                        
+                        <li><a  class="load-more">More</a></li> 
                     </ul>
                 </li>
             </ul>
@@ -136,13 +215,13 @@
                 <li>Tutor name: Najwa hamad</li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names2">
                         <li>Ahmad ali</li>
                         <li>Norah nasser</li>
                         <li>Reema mohamed</li>
-                        <li>Arwa saad</li>
-                        <li> shouq sultan</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">Arwa saad</li>
+                        <li class="kid-name hidden"> shouq sultan</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -154,13 +233,13 @@
                 <li>Tutor name: Mona khaled </li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names3">
                         <li>Yusef amjad</li>
                         <li>Waleed khaild</li>
                         <li>Rana sultan</li>
-                        <li>Lama mansour</li>
-                        <li>Maha naif</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">Lama mansour</li>
+                        <li class="kid-name hidden">Maha naif</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -172,13 +251,13 @@
                 <li>Tutor name: Fahad omar </li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names4">
                         <li>Fahad ali</li>
                         <li>Layan yousef</li>
                         <li>Lina bader</li>
-                        <li>Nawaf hatem</li>
-                        <li>Rayan saad</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">Nawaf hatem</li>
+                        <li class="kid-name hidden">Rayan saad</li>
+                        <li><a class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -190,13 +269,13 @@
                 <li>Tutor name: Sami ahmed </li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names5">
                         <li>Naif hashem</li>
                         <li>Reman salman</li>
                         <li>Mohammad mubark</li>
-                        <li>shouq sultan</li>
-                        <li>Abeer zyad</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">shouq sultan</li>
+                        <li class="kid-name hidden">Abeer zyad</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -208,13 +287,13 @@
                 <li>Tutor name: Hind saleh</li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names6">
                         <li>Arwa saad</li>
                         <li>Yusef amjad</li>
                         <li>Khloud ahmad</li>
-                        <li>ibrahim nasser</li>
-                        <li>Reema mohamed</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -226,13 +305,13 @@
                 <li>Tutor name: Hind Saleh</li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names7">
                         <li>Arwa saad</li>
                         <li>Yusef amjad</li>
                         <li>Khloud ahmad</li>
-                        <li>ibrahim nasser</li>
-                        <li>Reema mohamed</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -245,13 +324,13 @@
                 <li>Tutor name: Sami Ahmed</li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names8">
                         <li>Arwa saad</li>
                         <li>Yusef amjad</li>
                         <li>Khloud ahmad</li>
-                        <li>ibrahim nasser</li>
-                        <li>Reema mohamed</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -263,13 +342,13 @@
                 <li>Tutor name: Mona Khalid</li>
                 <li>
                     Crushers rigested:
-                    <ul>
+                    <ul class="names9">
                         <li>Arwa saad</li>
                         <li>Yusef amjad</li>
                         <li>Khloud ahmad</li>
-                        <li>ibrahim nasser</li>
-                        <li>Reema mohamed</li>
-                        <li><a href="#">More</a></li> <!-- Inactive "More" link -->
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a class="load-more" >More</a></li> <!-- Inactive "More" link -->
                     </ul>
                 </li>
             </ul>
@@ -374,7 +453,10 @@
 
     // Update the content of the 'currentWeekDate' paragraph
     document.getElementById('currentWeekDate').innerHTML = 'Date: ' + getFormattedWeekStartDate();
+
 </script>
+
+
 
    <footer class="footer-distributed">
 
