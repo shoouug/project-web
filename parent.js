@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var allChildrenNames = enteredChildrenNames.length > 0 ? enteredChildrenNames : defaultChildrenNames;
 
-    // Adding 2 to each index in the array
+    // Adding 2 to each index in the array and getting the corresponding name
     var updatedChildrenNames = allChildrenNames.map((name, index) => {
-        return index + 2;
+        return allChildrenNames[(index + 2) % allChildrenNames.length];
     });
 
     displayChildren(updatedChildrenNames);
