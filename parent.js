@@ -1,21 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
-    var childName = localStorage.getItem("childName");
-    
-    if (kidsNames.length === 0) {
-        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
-        localStorage.setItem("childName", ""); // Set an empty string or a default value for childName
-        displayChildren(defaultChildrenNames);
-    } else {
-        if (childName) {
-            if (!kidsNames.includes(childName)) {
-                kidsNames.push(childName);
-                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-            }
-        }
-        displayChildren(kidsNames);
-    }
+    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+    var enteredChildrenNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
+
+    var allChildrenNames = enteredChildrenNames.length > 0 ? enteredChildrenNames : defaultChildrenNames;
+
+    // Adding 2 to each index in the array
+    var updatedChildrenNames = allChildrenNames.map((name, index) => {
+        return index + 2;
+    });
+
+    displayChildren(updatedChildrenNames);
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
