@@ -2,23 +2,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var allNames = JSON.parse(localStorage.getItem("allNames")) || [];
     var childName = localStorage.getItem("childName");
 
+    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+
     if (!childName) {
-        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         if (allNames.length === 0) {
             allNames = allNames.concat(defaultChildrenNames);
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
     } else {
         allNames.push(childName);
-
-        // Check if default names have not been removed yet
-        var areDefaultNamesPresent = allNames.length <= 2;
-
-        if (areDefaultNamesPresent && allNames.length > 2) {
-            // Remove the default names only once
-            allNames = allNames.slice(2);
-            localStorage.setItem("allNames", JSON.stringify(allNames));
-        }
+        localStorage.setItem("allNames", JSON.stringify(allNames));
     }
 
     displayAllNames(allNames);
@@ -28,7 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clear previous content
         wrapper.innerHTML = '';
 
-        names.forEach(name => {
+        var displayedNames = names;
+
+        // Check if a new name has been added and default names haven't been sliced
+        if (names.length > defaultChildrenNames.length && names.length <= defaultChildrenNames.length + 1) {
+            // Remove default names after one new name is added
+            displayedNames = names.slice(defaultChildrenNames.length);
+        }
+
+        displayedNames.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
