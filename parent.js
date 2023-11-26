@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        // Clear previous content in case default names were displayed
-        wrapper.innerHTML = '';
+     
 
         names.forEach(name => {
             var childBox = document.createElement('div');
