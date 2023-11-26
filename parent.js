@@ -14,9 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Delete the default names
                 localStorage.removeItem("kidsNames");
+
+                // Display the updated list
+                displayChildren(kidsNames);
             }
+        } else {
+            // Display existing names without adding new ones
+            displayChildren(kidsNames);
         }
-        displayChildren(kidsNames);
     }
 
     function displayChildren(names) {
