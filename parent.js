@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayChildName(defaultChildrenNames);
     } else {
         var namesArray = JSON.parse(childName);
-        displayChildName(namesArray.slice(2));
+        displayChildName(namesArray);
     }
 
     function displayChildName(names) {
