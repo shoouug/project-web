@@ -2,27 +2,27 @@ document.addEventListener('DOMContentLoaded', function () {
     var allNames = JSON.parse(localStorage.getItem("allNames")) || [];
     var childName = localStorage.getItem("childName");
 
+    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
 
     if (!childName) {
-        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         if (allNames.length === 0) {
             allNames = allNames.concat(defaultChildrenNames);
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
     } else {
+        // Add the new name
         allNames.push(childName);
-        if ( allNames.length > 2) {
-            allNames = allNames.slice(2);
-           
-            localStorage.setItem("allNames", JSON.stringify(allNames));
-        }
-        
+
+        // Remove default names after adding a new name
+        allNames = allNames.slice(defaultChildrenNames.length);
+        localStorage.setItem("allNames", JSON.stringify(allNames));
     }
 
     displayAllNames(allNames);
 
     function displayAllNames(names) {
         var wrapper = document.querySelector('.wrapper');
+        // Clear previous content
         wrapper.innerHTML = '';
 
         names.forEach(name => {
