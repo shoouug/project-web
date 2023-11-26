@@ -9,13 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         if (childName && !kidsNames.includes(childName)) {
             kidsNames.push(childName);
+            kidsNames.push('New Name 1'); // Add default index
+            kidsNames.push('New Name 2'); // Add default index
             localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+            displayChildren(kidsNames.slice(2)); // Display only new names
+        } else if (kidsNames.length > 0) {
+            displayChildren(kidsNames.slice(2)); // Display only new names
         }
-        displayChildren(kidsNames);
     }
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
+        // Clear previous content in case default names were displayed
+        wrapper.innerHTML = '';
+
         names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
