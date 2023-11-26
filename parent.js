@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!kidsNames.includes(childName)) {
                 kidsNames.push(childName);
                 localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+
+                // Delete the default names
+                localStorage.removeItem("kidsNames");
             }
         }
         displayChildren(kidsNames);
-
-        // Delete the saved names
-        localStorage.removeItem("kidsNames");
     }
 
     function displayChildren(names) {
