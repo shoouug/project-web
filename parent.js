@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 kidsNames.push(childName);
                 localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
             }
-            displayChildren(kidsNames);
+            
         }
-       
+        displayChildren(kidsNames);
     }
 
     function displayChildren(names) {
