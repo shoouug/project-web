@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     } else {
         allNames.push(childName);
-        var areDefaultNamesRemoved = allNames.length > 2;
-        var isNewNameAdded = allNames.slice(2).indexOf(childName) !== -1;
 
-        if (areDefaultNamesRemoved && !isNewNameAdded) {
+        // Check if default names have not been removed yet
+        var areDefaultNamesPresent = allNames.length <= 2;
+
+        if (areDefaultNamesPresent && allNames.length > 2) {
+            // Remove the default names only once
             allNames = allNames.slice(2);
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayAllNames(names) {
         var wrapper = document.querySelector('.wrapper');
+        // Clear previous content
         wrapper.innerHTML = '';
 
         names.forEach(name => {
