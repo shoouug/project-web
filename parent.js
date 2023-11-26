@@ -1,41 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
-    var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-    var enteredNames = JSON.parse(localStorage.getItem("enteredNames")) || [];
-
-    if (childName) {
-        // Add the new name
-        enteredNames.push(childName);
-
-        // Combine default names with entered names and remove the first two indexes
-        var combinedNames = defaultChildrenNames.concat(enteredNames.slice(2));
-
-        localStorage.setItem("enteredNames", JSON.stringify(combinedNames));
+    
+    if (kidsNames.length === 0) {
+        var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
+        localStorage.setItem("childName", ""); // Set an empty string or a default value for childName
+        displayChildren(defaultChildrenNames);
+    } else {
+        if (childName) {
+            if (!kidsNames.includes(childName)) {
+                kidsNames.push(childName);
+                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+            }
+        }
+        displayChildren(kidsNames);
     }
 
-    displayAllNames(enteredNames);
-
-    function displayAllNames(names) {
+    function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        // Clear previous content
-        wrapper.innerHTML = '';
-
-        if (names.length === 0) {
-            // Display default names if no entered names
-            defaultChildrenNames.forEach(name => {
-                var childBox = document.createElement('div');
-                childBox.classList.add('child-box');
-                childBox.textContent = name;
-                wrapper.appendChild(childBox);
-            });
-        } else {
-            // Display combined names after removing the first two indexes
-            names.forEach(name => {
-                var childBox = document.createElement('div');
-                childBox.classList.add('child-box');
-                childBox.textContent = name;
-                wrapper.appendChild(childBox);
-            });
-        }
+        names.forEach(name => {
+            var childBox = document.createElement('div');
+            childBox.classList.add('child-box');
+            childBox.textContent = name;
+            wrapper.appendChild(childBox);
+        });
     }
 });
