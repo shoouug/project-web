@@ -7,7 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
         displayChildren(defaultChildrenNames);
     } else {
         var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
-        displayChildren(kidsNames);
+        
+        // Check if there are no kidsNames saved
+        if (kidsNames.length === 0) {
+            // If empty, display default names
+            var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
+            displayChildren(defaultChildrenNames);
+        } else {
+            // Otherwise, display the saved names
+            displayChildren(kidsNames);
+        }
     }
 
     function displayChildren(names) {
