@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         enteredNames.push(childName);
 
         // Combine default names with entered names and remove the first two indexes
-        var combinedNames = defaultChildrenNames.concat(enteredNames);
+        var combinedNames = defaultChildrenNames.concat(enteredNames.slice(2));
 
         localStorage.setItem("enteredNames", JSON.stringify(combinedNames));
     }
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             // Display combined names after removing the first two indexes
-            names.slice(2).forEach(name => {
+            names.forEach(name => {
                 var childBox = document.createElement('div');
                 childBox.classList.add('child-box');
                 childBox.textContent = name;
