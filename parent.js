@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             kidsNames.push('New Name 2'); // Add default index
             localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
             displayChildren(kidsNames.slice(2)); // Display only new names
-        } else if (kidsNames.length > 0) {
-            displayChildren(kidsNames.slice(2)); // Display only new names
-        }
+        }  
     }
 
     function displayChildren(names) {
