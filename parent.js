@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
             allNames = allNames.concat(defaultChildrenNames);
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
-    } else if (!allNames.includes(childName)) {
+    } else {
         allNames.push(childName);
+        if (allNames.length > 2) {
+            // Remove the default names
+            allNames = allNames.slice(2);
+        }
         localStorage.setItem("allNames", JSON.stringify(allNames));
     }
 
