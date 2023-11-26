@@ -12,7 +12,7 @@ section {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    background: url(images/background1.png) no-repeat;
+    background: url(Images/background1.png) no-repeat;
     background-size: contain;
     background-position:  right bottom;
     background-attachment: scroll;
