@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clear previous content
         wrapper.innerHTML = '';
 
-        names.forEach(name => {
+        // Display names starting from the third index
+        names.slice(2).forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
