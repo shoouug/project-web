@@ -10,16 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
     } else {
+        // Add the new name
         allNames.push(childName);
 
-        // Check if default names are present
-        var areDefaultNamesPresent = allNames.length <= defaultChildrenNames.length;
-
-        if (areDefaultNamesPresent) {
-            // Remove default names after adding a new name
-            allNames = allNames.slice(defaultChildrenNames.length);
-            localStorage.setItem("allNames", JSON.stringify(allNames));
-        }
+        // Remove default names after adding a new name
+        allNames = allNames.slice(defaultChildrenNames.length);
+        localStorage.setItem("allNames", JSON.stringify(allNames));
     }
 
     displayAllNames(allNames);
@@ -29,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clear previous content
         wrapper.innerHTML = '';
 
-        // Display names starting from the third index
-        names.slice(2).forEach(name => {
+        names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
