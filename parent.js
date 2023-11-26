@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!childName) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        if (!allNames.length) {
+        if (allNames.length === 0) {
             allNames = allNames.concat(defaultChildrenNames);
             localStorage.setItem("allNames", JSON.stringify(allNames));
         }
