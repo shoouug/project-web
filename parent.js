@@ -1,23 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
+
     if (kidsNames.length === 0) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
+        sessionStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
         displayChildren(defaultChildrenNames);
     } else {
-        if (childName) {
-            if (!kidsNames.includes(childName)) {
-                kidsNames.push(childName);
-                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-            }
+        if (childName && !kidsNames.includes(childName)) {
+  
+            var sessionDefaultNames = JSON.parse(sessionStorage.getItem("kidsNames")) || [];
+            sessionDefaultNames = sessionDefaultNames.filter(name => !['Ahmad Ali', 'Fahad Ali'].includes(name));
+            sessionStorage.setItem("kidsNames", JSON.stringify(sessionDefaultNames));
+            kidsNames.push(childName);
+            localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
         }
-        displayChildren(kidsNames.filter(name => !['Ahmad Ali', 'Fahad Ali'].includes(name)));
+        displayChildren(kidsNames);
     }
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
-        wrapper.innerHTML = "";
+        wrapper.innerHTML = ""; 
+
         names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
