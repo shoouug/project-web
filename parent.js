@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adding 2 to each index in the array and getting the corresponding name
     var updatedChildrenNames = allChildrenNames.map((name, index) => {
-        return allChildrenNames[(index + 2) % allChildrenNames.length];
+        var newIndex = (index + 2) % allChildrenNames.length;
+        return allChildrenNames[newIndex];
     });
 
     displayChildren(updatedChildrenNames);
