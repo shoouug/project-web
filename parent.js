@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     var childName = localStorage.getItem("childName");
-    
+
     if (!childName) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         localStorage.setItem("childName", JSON.stringify(defaultChildrenNames));
         displayChildName(defaultChildrenNames);
     } else {
-        displayChildName(JSON.parse(childName).slice(2));
+        var namesArray = JSON.parse(childName);
+        displayChildName(namesArray.slice(2));
     }
 
     function displayChildName(names) {
         var wrapper = document.querySelector('.wrapper');
-
+        // Clear previous content
+        wrapper.innerHTML = '';
 
         names.forEach(name => {
             var childBox = document.createElement('div');
