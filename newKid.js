@@ -79,6 +79,7 @@ function displayChildInformation(childInfo) {
 
         // Trigger the print dialog
         newWindow.print();
+        //
     };
     image.src = imageUrl;
 }
