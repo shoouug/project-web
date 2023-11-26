@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         enteredNames.push(childName);
 
         // Combine default names with entered names and remove the first two indexes
-        var combinedNames = defaultChildrenNames.concat(enteredNames.slice(2));
+        var combinedNames = defaultChildrenNames.concat(enteredNames);
 
         localStorage.setItem("enteredNames", JSON.stringify(combinedNames));
     }
