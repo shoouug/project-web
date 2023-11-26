@@ -39,7 +39,7 @@ body {
 
 #theme-switcher{
     position:absolute;
-    top:15vh;
+    top:120px;
     margin-right:0;
 }
 #theme-toggle {
@@ -59,6 +59,19 @@ body {
 
 #mode-text:hover {
     color: red;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 800px) {
+    #theme-switcher {
+        top: 180px; /* Adjust the top position for smaller screens */
+    }
+
+
+
+    #mode-text {
+        margin-left: 4px; /* Adjust the margin for smaller screens */
+    }
 }
 
 
