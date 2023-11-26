@@ -18,10 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Display the updated list
                 displayChildren(kidsNames);
             }
-        } else {
-            // Display existing names without adding new ones
-            displayChildren(kidsNames);
-        }
+        } 
     }
 
     function displayChildren(names) {
