@@ -11,7 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     } else {
         allNames.push(childName);
-        localStorage.setItem("allNames", JSON.stringify(allNames));
+
+        // Check if default names are present
+        var areDefaultNamesPresent = allNames.length <= defaultChildrenNames.length;
+
+        if (areDefaultNamesPresent) {
+            // Remove default names after adding a new name
+            allNames = allNames.slice(defaultChildrenNames.length);
+            localStorage.setItem("allNames", JSON.stringify(allNames));
+        }
     }
 
     displayAllNames(allNames);
@@ -21,15 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clear previous content
         wrapper.innerHTML = '';
 
-        var displayedNames = names;
-
-        // Check if a new name has been added and default names haven't been sliced
-        if (names.length > defaultChildrenNames.length && names.length <= defaultChildrenNames.length + 1) {
-            // Remove default names after one new name is added
-            displayedNames = names.slice(defaultChildrenNames.length);
-        }
-
-        displayedNames.forEach(name => {
+        names.forEach(name => {
             var childBox = document.createElement('div');
             childBox.classList.add('child-box');
             childBox.textContent = name;
