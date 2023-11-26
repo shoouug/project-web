@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (!allNames.includes(childName)) {
         allNames.push(childName);
         localStorage.setItem("allNames", JSON.stringify(allNames));
+        displayAllNames(allNames.slice(2));
     }
 
-    displayAllNames(allNames.slice(2));
+    
 
     function displayAllNames(names) {
         var wrapper = document.querySelector('.wrapper');
