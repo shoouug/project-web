@@ -1,22 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
-
-    if (kidsNames.length === 0 && !childName) {
+    
+    if (!childName) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
-        displayChildren(defaultChildrenNames);
+        localStorage.setItem("childName", JSON.stringify(defaultChildrenNames));
+        displayChildName(defaultChildrenNames);
     } else {
-        if (childName && !kidsNames.includes(childName)) {
-            kidsNames.push(childName);
-            localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-        }
-        displayChildren(kidsNames.slice(2)); // Display only new names
+        displayChildName(JSON.parse(childName).slice(2));
     }
 
-    function displayChildren(names) {
+    function displayChildName(names) {
         var wrapper = document.querySelector('.wrapper');
-     
+        // Clear previous content
+        wrapper.innerHTML = '';
 
         names.forEach(name => {
             var childBox = document.createElement('div');
