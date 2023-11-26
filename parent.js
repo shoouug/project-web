@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (kidsNames.length === 0 && !childName) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
-        localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
+        if (!localStorage.getItem("initialized")) {
+            localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
+            localStorage.setItem("initialized", true);
+        }
         displayChildren(defaultChildrenNames);
     } else {
         if (childName && !kidsNames.includes(childName)) {
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             kidsNames.push('New Name 1'); // Add default index
             kidsNames.push('New Name 2'); // Add default index
             localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+            displayChildren(kidsNames.slice(2)); // Display only new names
         } else if (kidsNames.length > 0) {
             displayChildren(kidsNames.slice(2)); // Display only new names
         }
