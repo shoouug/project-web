@@ -2,23 +2,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var kidsNames = JSON.parse(localStorage.getItem("kidsNames")) || [];
     var childName = localStorage.getItem("childName");
 
+    var defaultNamesDisplayed = false;
+
     if (kidsNames.length === 0) {
         var defaultChildrenNames = ['Ahmad Ali', 'Fahad Ali'];
         localStorage.setItem("kidsNames", JSON.stringify(defaultChildrenNames));
         displayChildren(defaultChildrenNames);
-    } else {
-        if (childName) {
-            if (!kidsNames.includes(childName)) {
-                kidsNames.push(childName);
-                localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-            }
-        }
-        // Delete the default names only if there are new names
-        if (kidsNames.length > 0 && !childName) {
+        defaultNamesDisplayed = true;
+    }
+
+    if (childName && !kidsNames.includes(childName)) {
+        kidsNames.push(childName);
+        localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
+
+        // Remove default names only if they have been displayed
+        if (defaultNamesDisplayed) {
             localStorage.removeItem("kidsNames");
         }
-        displayChildren(kidsNames);
     }
+
+    displayChildren(kidsNames);
 
     function displayChildren(names) {
         var wrapper = document.querySelector('.wrapper');
