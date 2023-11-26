@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!kidsNames.includes(childName)) {
                 kidsNames.push(childName);
                 localStorage.setItem("kidsNames", JSON.stringify(kidsNames));
-                displayChildren(kidsNames.filter(name => !['Ahmad Ali', 'Fahad Ali'].includes(name)));
             }
+            displayChildren(kidsNames.filter(name => !['Ahmad Ali', 'Fahad Ali'].includes(name)));
         }
        
     }
